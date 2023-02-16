@@ -1,0 +1,9 @@
+/.gradle/
+build/
+.idea/*
+admin/*/target/
+/co-quotation/co-quotation-provider/out/
+/common-parent/common/out/
+/common-parent/common-mongo/
+/common-parent/common-redis/out/
+.DS_Store

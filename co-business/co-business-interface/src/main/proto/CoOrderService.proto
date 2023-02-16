@@ -1,0 +1,111 @@
+syntax = "proto3";
+import "CoOrderPO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.coOrder";
+option java_outer_classname = "CoOrderBizServiceProto";
+
+package coOrder;
+
+service CoOrderBizService {
+    rpc getById (CoOrderRequest) returns (CoOrderPO) {}
+    rpc selectListByIds (CoOrderIdsRequest) returns (CoOrderListReply) {}
+    rpc selectAll (CoOrderPageRequest) returns (CoOrderListReply) {}
+    rpc selectList (CoOrderPageRequest) returns (CoOrderListReply) {}
+    rpc insertOne (CoOrderRequest) returns (CoOrderReply) {}
+    rpc insertBatch (CoOrderListRequest) returns (CoOrderListReply) {}
+    rpc updateById (CoOrderRequest) returns (CoOrderReply) {}
+    rpc updateBatch (CoOrderListRequest) returns (CoOrderReply) {}
+    rpc removeById (CoOrderRequest) returns (CoOrderReply) {}
+    rpc removeAll (CoOrderIdsRequest) returns (CoOrderReply) {}
+    rpc create (CoOrderRequest) returns (CoOrderReply) {}
+    rpc close (CoOrderRequest) returns (CoOrderReply) {}
+    rpc cancelOrder(CoOrderRequest) returns (CoOrderReply) {}
+    rpc cancelUserOrders (CoOrderCancelRequest) returns (CoOrderStatusReply) {}
+    rpc cancelUserOrdersNotFilled (CoOrderCancelRequest) returns (CoOrderReply) {}
+    rpc getUserOrderCount (CoUserOrderRequest) returns (CoUserOrderCountReply) {}
+    rpc selectListByStatus (CoOrderPageByStatusRequest) returns (CoOrderListReply) {}
+}
+
+message CoOrderRequest {
+    int64 id = 1;
+    CoOrderPO coOrderPO = 2;
+}
+
+message CoOrderPageRequest {
+    int32 page = 1;
+    int32 size = 2;
+    CoOrderPO coOrderPO = 3;
+}
+
+message CoOrderPageByStatusRequest {
+    int32 page = 1;
+    int32 limit = 2;
+    string beginTime = 3;
+    string endTime = 4;
+    repeated int32 status = 5;
+    CoOrderPO coOrderPO = 6;
+}
+
+message CoOrderListRequest {
+    repeated CoOrderPO coOrderPO = 1;
+}
+
+message CoOrderIdsRequest {
+    repeated int64 id = 1;
+}
+
+message CoCurrentOrderRequest{
+    int64 id=1;
+    string contractId=2;
+    int32 limit=3;
+    int32 page=4;
+    string type=5;
+}
+
+message CoHistoryOrderRequest{
+    int64 id=1;
+    string contractId=2;
+    int32 limit=3;
+    int32 page=4;
+    string type=5;
+    string beginTime=6;
+    string endTime=7;
+}
+
+message CoOrderReply {
+    bool status = 1;
+    string message = 2;
+    CoOrderPO coOrderPO = 3;
+}
+
+message CoOrderListReply {
+    repeated CoOrderPO coOrderPO = 1;
+    int64 total = 2;
+}
+
+message CoOrderCancelRequest {
+    int64 uid = 1;
+    string symbol = 2;
+    string side = 3;
+    int32 timeout = 4; //超时时间，单位为秒，如果不传入该参数，默认为180秒
+}
+
+message CoOrderStatusReply {
+    bool status = 1;
+    string message = 2;
+    repeated CoOrderStatus orders = 3;
+}
+
+message CoOrderStatus {
+    int64 id = 1;
+    bool status = 2;
+}
+message CoUserOrderRequest{
+    int64 id=1;
+}
+
+message CoUserOrderCountReply{
+    int32 orderCount=1;
+    int32 triggerOrderCount=2;
+}

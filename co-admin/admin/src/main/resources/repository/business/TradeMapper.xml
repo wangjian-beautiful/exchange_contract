@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bijinsuo.business.repository.TradeMapper">
+
+    <resultMap type="Trade" id="CoTradeResult">
+        <result property="id"    column="id"    />
+        <result property="symbol"    column="symbol"    />
+        <result property="tradeNo"    column="trade_no"    />
+        <result property="uid"    column="uid"    />
+        <result property="positionId"    column="position_id"    />
+        <result property="orderId"    column="order_id"    />
+        <result property="positionSide"    column="position_side"   typeHandler="com.bijinsuo.business.util.mybatis.typehandler.OperateSideHandler" />
+        <result property="operateSide"    column="operate_side"   typeHandler="com.bijinsuo.business.util.mybatis.typehandler.OperateSideHandler"  />
+        <result property="price"    column="price"    />
+        <result property="volumeBase"    column="volume_base"    />
+        <result property="volumeQuote"    column="volume_quote"    />
+        <result property="trendSide"    column="trend_side"    />
+        <result property="fee"    column="fee"    />
+        <result property="ctime"    column="ctime"    />
+        <result property="mtime"    column="mtime"    />
+    </resultMap>
+
+    <sql id="selectCoTradeVo">
+        select id, symbol, trade_no, uid, position_id, order_id, position_side, operate_side, price, volume_base, volume_quote, trend_side, fee, ctime, mtime from co_trade
+    </sql>
+
+    <select id="selectTradeList" parameterType="Trade" resultMap="CoTradeResult">
+        <include refid="selectCoTradeVo"/>
+        <where>
+            <if test="symbol != null  and symbol != ''"> and symbol = #{symbol}</if>
+            <if test="uid != null "> and uid = #{uid}</if>
+            <if test="positionId != null "> and position_id = #{positionId}</if>
+            <if test="orderId != null "> and order_id = #{orderId}</if>
+            <if test="positionSide != null  and positionSide != ''"> and position_side = #{positionSide, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.OperateTypeHandler}</if>
+            <if test="operateSide != null  and operateSide != ''"> and operate_side = #{operateSide, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.OperateSideHandler}</if>
+            <if test="trendSide != null  and trendSide != ''"> and trend_side = #{trendSide}</if>
+            <if test="startTime != null"> and ctime >= #{startTime}</if>
+            <if test="endTime != null"> and ctime <![CDATA[ <= ]]> #{endTime}</if>
+        </where>
+    </select>
+</mapper>

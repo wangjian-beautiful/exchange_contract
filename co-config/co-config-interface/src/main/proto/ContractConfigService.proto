@@ -1,0 +1,56 @@
+syntax = "proto3";
+import "ContractConfigPO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.contractConfig";
+option java_outer_classname = "ContractConfigBizServiceProto";
+
+package contractConfig;
+
+service ContractConfigBizService {
+    rpc getById (ContractConfigRequest) returns (ContractConfigPO) {}
+    rpc getBySymbol (ContractConfigSymbolRequest) returns (ContractConfigPO) {}
+    rpc selectListByIds (ContractConfigIdsRequest) returns (ContractConfigListReply) {}
+    rpc selectAll (ContractConfigPageRequest) returns (ContractConfigListReply) {}
+    rpc selectList (ContractConfigPageRequest) returns (ContractConfigListReply) {}
+    rpc insertOne (ContractConfigRequest) returns (ContractConfigReply) {}
+    rpc insertBatch (ContractConfigListRequest) returns (ContractConfigListReply) {}
+    rpc updateById (ContractConfigRequest) returns (ContractConfigReply) {}
+    rpc updateBatch (ContractConfigListRequest) returns (ContractConfigReply) {}
+    rpc removeById (ContractConfigRequest) returns (ContractConfigReply) {}
+    rpc removeAll (ContractConfigIdsRequest) returns (ContractConfigReply) {}
+}
+
+message ContractConfigRequest {
+    int64 id = 1;
+    ContractConfigPO contractConfigPO = 2;
+}
+
+message ContractConfigSymbolRequest {
+    string symbol = 1;
+}
+
+message ContractConfigPageRequest {
+    int32 page = 1;
+    int32 size = 2;
+    ContractConfigPO contractConfigPO = 3;
+}
+
+message ContractConfigListRequest {
+    repeated ContractConfigPO contractConfigPO = 1;
+}
+
+message ContractConfigIdsRequest {
+    repeated int64 id = 1;
+}
+
+message ContractConfigReply {
+    bool status = 1;
+    string message = 2;
+    ContractConfigPO contractConfigPO = 3;
+}
+
+message ContractConfigListReply {
+    repeated ContractConfigPO contractConfigPO = 1;
+    int64 total = 2;
+}

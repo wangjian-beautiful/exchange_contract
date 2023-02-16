@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.transaction";
+option java_outer_classname = "TransactionPOProto";
+
+package transaction;
+
+message TransactionPO{
+        google.protobuf.Int64Value id = 1;
+        google.protobuf.Int64Value fromUid = 2;
+        google.protobuf.Int32Value fromType = 3;
+        string fromBalance = 4;
+        google.protobuf.Int64Value toUid = 5;
+        google.protobuf.Int32Value toType = 6;
+        string toBalance = 7;
+        string amount = 8;
+        string meta = 9;
+        string scene = 10;
+        string refType = 11;
+        google.protobuf.Int64Value refId = 12;
+        google.protobuf.Int64Value opUid = 13;
+        string opIp = 14;
+        google.protobuf.Timestamp ctime = 15;
+        google.protobuf.Timestamp mtime = 16;
+}

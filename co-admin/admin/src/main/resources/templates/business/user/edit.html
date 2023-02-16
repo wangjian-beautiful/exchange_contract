@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('修改用户')" />
+</head>
+<body class="white-bg">
+<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+    <form class="form-horizontal m" id="form-user-edit" th:object="${user}">
+        <input name="uid" th:field="*{uid}" type="hidden">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">open api 调用时使用的apiKey：</label>
+            <div class="col-sm-8">
+                <input name="apiKey" th:field="*{apiKey}" class="form-control" type="text">
+            </div>
+        </div>
+    </form>
+</div>
+<th:block th:include="include :: footer" />
+<script th:inline="javascript">
+    var prefix = ctx + "system/user";
+    $("#form-user-edit").validate({
+        focusCleanup: true
+    });
+
+    function submitHandler() {
+        if ($.validate.form()) {
+            $.operate.save(prefix + "/edit", $('#form-user-edit').serialize());
+        }
+    }
+</script>
+</body>
+</html>

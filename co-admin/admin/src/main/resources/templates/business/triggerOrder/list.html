@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('【请填写功能名称】列表')" />
+</head>
+<body class="gray-bg">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="formId">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            <label>交易对：</label>
+                            <input type="text" name="symbol"/>
+                        </li>
+                        <li>
+                            <label>用户id：</label>
+                            <input type="text" name="uid"/>
+                        </li>
+                        <li>
+                            <label>条件单类型：</label>
+                            <select name="triggerType">
+                                <option value="" selected></option>
+                                <option value="1">止损</option>
+                                <option value="2">止盈</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>持仓类型：</label>
+                            <select name="positionType">
+                                <option value="" selected></option>
+                                <option value="1">全仓</option>
+                                <option value="2">逐仓</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>开平仓方向：</label>
+                            <select name="operateType">
+                                <option value="" selected></option>
+                                <option value="open">开仓</option>
+                                <option value="close">平仓</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>买卖方向：</label>
+                            <select name="operateSide">
+                                <option value="" selected></option>
+                                <option value="buy">买入</option>
+                                <option value="sell">卖出</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>状态：</label>
+                            <select name="status">
+                                <option value="" selected></option>
+                                <option value="0">有效</option>
+                                <option value="1">已过期</option>
+                                <option value="2">已完成</option>
+                                <option value="3">触发失败</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>类型：</label>
+                            <select name="type">
+                                <option value="" selected></option>
+                                <option value="0">普通条件单</option>
+                                <option value="1">OTO类型条件单</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>交易类型：</label>
+                            <select name="tradeType">
+                                <option value="" selected></option>
+                                <option value="1">限价</option>
+                                <option value="2">市价</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>时间范围：</label>
+                            <input type="date" name="startTime"/> 至
+                            <input type="date" name="endTime"/>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                            <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
+        </div>
+    </div>
+</div>
+<th:block th:include="include :: footer" />
+<script th:inline="javascript">
+    var editFlag = [[${@permission.hasPermi('system:order:edit')}]];
+    var removeFlag = [[${@permission.hasPermi('system:order:remove')}]];
+    var prefix = ctx + "business/triggerOrder";
+
+    $(function() {
+        var options = {
+            url: prefix + "/list",
+            createUrl: prefix + "/add",
+            updateUrl: prefix + "/edit/{id}",
+            removeUrl: prefix + "/remove",
+            exportUrl: prefix + "/export",
+            modalName: "【请填写功能名称】",
+            columns: [{
+                checkbox: true
+            },
+                {
+                    field: 'id',
+                    title: '主键',
+                    visible: false
+                },
+                {
+                    field: 'symbol',
+                    title: '交易对'
+                },
+                {
+                    field: 'uid',
+                    title: '用户id'
+                },
+                {
+                    field: 'triggerType',
+                    title: '条件单类型'
+                },
+                {
+                    field: 'triggerPrice',
+                    title: '触发价格'
+                },
+                {
+                    field: 'currentMarketPrice',
+                    title: '下单时的市价'
+                },
+                {
+                    field: 'positionType',
+                    title: '持仓类型'
+                },
+                {
+                    field: 'operateType',
+                    title: '开平仓方向'
+                },
+                {
+                    field: 'operateSide',
+                    title: '买卖方向'
+                },
+                {
+                    field: 'leverageLevel',
+                    title: '杠杆倍数'
+                },
+                {
+                    field: 'price',
+                    title: '下单价格'
+                },
+                {
+                    field: 'volumeBase',
+                    title: '下单数量'
+                },
+                {
+                    field: 'volumeQuote',
+                    title: '下单数额'
+                },
+                {
+                    field: 'status',
+                    title: '有效状态'
+                },
+                {
+                    field: 'memo',
+                    title: '状态备注'
+                },
+                {
+                    field: 'expireTime',
+                    title: '订单过期时间'
+                },
+                {
+                    field: 'ctime',
+                    title: '创建时间'
+                },
+                {
+                    field: 'mtime',
+                    title: '更新时间'
+                },
+                {
+                    field: 'masterId',
+                    title: '主订单ID'
+                },
+                {
+                    field: 'type',
+                    title: '委托类型'
+                },
+                {
+                    field: 'positionId',
+                    title: '仓位ID'
+                },
+                {
+                    field: 'orderId',
+                    title: '下单ID'
+                },
+                {
+                    field: 'tradeType',
+                    title: '委托下单方式'
+                },
+                {
+                    field: 'tradePrice',
+                    title: '限价价格'
+                }]
+        };
+        $.table.init(options);
+    });
+</script>
+</body>
+</html>

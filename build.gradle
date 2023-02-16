@@ -1,0 +1,57 @@
+//定义扩展属性(给脚本用的脚本)
+buildscript {
+
+    //定义扩展属性(可选)
+    ext {
+//        springBootVersion = "3.0.0-M3"
+        springBootVersion = "2.3.1.RELEASE"
+        grpcVersion = '1.44.1'
+        hutoolVersion = '5.5.3'
+        mybatisPlusVersion = '3.5.2'
+        pageHelperVersion = '1.4.3'
+    }
+    repositories {
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'https://repo.spring.io/milestone' }
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//        classpath 'gradle.plugin.com.google.protobuf:protobuf-gradle-plugin:0.8.18'
+    }
+}
+allprojects {
+    group = 'com.bijinduo'
+    version = '1.0.0'
+}
+
+subprojects {
+    apply plugin: 'java-library'
+//    apply plugin: 'maven'
+    apply plugin: 'org.springframework.boot'  //使用springboot插件
+    apply plugin: 'io.spring.dependency-management'  //版本管理插件
+//    apply plugin: 'com.google.protobuf' //protobuf插件
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    repositories {
+        mavenLocal()
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'https://repo.spring.io/milestone' }
+    }
+    dependencies {
+        api 'com.google.protobuf:protobuf-java:3.20.0'
+        api "cn.hutool:hutool-all:${hutoolVersion}"
+        compileOnly 'org.projectlombok:lombok:1.18.8'
+        annotationProcessor 'org.projectlombok:lombok:1.18.8'
+//        implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+//        implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+        testImplementation  group: 'junit', name: 'junit', version: '4.12'
+        implementation group: 'commons-net', name: 'commons-net', version: '3.8.0'
+    }
+}

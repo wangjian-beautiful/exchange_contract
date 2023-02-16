@@ -1,0 +1,51 @@
+syntax = "proto3";
+import "CoTradePO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.coTrade";
+option java_outer_classname = "CoTradeBizServiceProto";
+
+package coTrade;
+
+service CoTradeBizService {
+    rpc getById (CoTradeRequest) returns (CoTradePO) {}
+    rpc selectListByIds (CoTradeIdsRequest) returns (CoTradeListReply) {}
+    rpc selectAll (CoTradePageRequest) returns (CoTradeListReply) {}
+    rpc selectList (CoTradePageRequest) returns (CoTradeListReply) {}
+    rpc insertOne (CoTradeRequest) returns (CoTradeReply) {}
+    rpc insertBatch (CoTradeListRequest) returns (CoTradeListReply) {}
+    rpc updateById (CoTradeRequest) returns (CoTradeReply) {}
+    rpc updateBatch (CoTradeListRequest) returns (CoTradeReply) {}
+    rpc removeById (CoTradeRequest) returns (CoTradeReply) {}
+    rpc removeAll (CoTradeIdsRequest) returns (CoTradeReply) {}
+}
+
+message CoTradeRequest {
+    int64 id = 1;
+    CoTradePO coTradePO = 2;
+}
+
+message CoTradePageRequest {
+    int32 page = 1;
+    int32 size = 2;
+    CoTradePO coTradePO = 3;
+}
+
+message CoTradeListRequest {
+    repeated CoTradePO coTradePO = 1;
+}
+
+message CoTradeIdsRequest {
+    repeated int64 id = 1;
+}
+
+message CoTradeReply {
+    bool status = 1;
+    string message = 2;
+    CoTradePO coTradePO = 3;
+}
+
+message CoTradeListReply {
+    repeated CoTradePO coTradePO = 1;
+    int64 total = 2;
+}

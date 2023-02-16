@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bijinsuo.business.repository.TransactionMapper">
+
+    <resultMap type="Transaction" id="TransactionResult">
+        <result property="id"    column="id"    />
+        <result property="fromUid"    column="from_uid"    />
+        <result property="fromType"    column="from_type"    />
+        <result property="fromBalance"    column="from_balance"    />
+        <result property="toUid"    column="to_uid"    />
+        <result property="toType"    column="to_type"    />
+        <result property="toBalance"    column="to_balance"    />
+        <result property="amount"    column="amount"    />
+        <result property="meta"    column="meta"    />
+        <result property="scene"    column="scene"    />
+        <result property="refType"    column="ref_type"    />
+        <result property="refId"    column="ref_id"    />
+        <result property="opUid"    column="op_uid"    />
+        <result property="opIp"    column="op_ip"    />
+        <result property="ctime"    column="ctime"    />
+        <result property="mtime"    column="mtime"    />
+    </resultMap>
+
+    <sql id="selectTransactionVo">
+        select id, from_uid, from_type, from_balance, to_uid, to_type, to_balance, amount, meta, scene, ref_type, ref_id, op_uid, op_ip, ctime, mtime from transaction
+    </sql>
+
+    <select id="selectTransactionList" parameterType="Transaction" resultMap="TransactionResult">
+        <include refid="selectTransactionVo"/>
+        <where>
+            <if test="fromUid != null "> and from_uid = #{fromUid}</if>
+            <if test="fromType != null "> and from_type = #{fromType}</if>
+            <if test="fromBalance != null "> and from_balance = #{fromBalance}</if>
+            <if test="toUid != null "> and to_uid = #{toUid}</if>
+            <if test="toType != null "> and to_type = #{toType}</if>
+            <if test="toBalance != null "> and to_balance = #{toBalance}</if>
+            <if test="amount != null "> and amount = #{amount}</if>
+            <if test="meta != null  and meta != ''"> and meta = #{meta}</if>
+            <if test="scene != null  and scene != ''"> and scene = #{scene}</if>
+            <if test="refType != null  and refType != ''"> and ref_type = #{refType}</if>
+            <if test="refId != null "> and ref_id = #{refId}</if>
+            <if test="opUid != null "> and op_uid = #{opUid}</if>
+            <if test="opIp != null  and opIp != ''"> and op_ip = #{opIp}</if>
+            <if test="startTime != null"> and ctime >= #{startTime}</if>
+            <if test="endTime != null"> and ctime <![CDATA[ <= ]]> #{endTime}</if>
+        </where>
+    </select>
+
+</mapper>

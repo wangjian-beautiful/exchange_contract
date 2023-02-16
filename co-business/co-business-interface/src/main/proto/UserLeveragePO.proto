@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.userLeverage";
+option java_outer_classname = "UserLeveragePOProto";
+
+package userLeverage;
+
+message UserLeveragePO{
+        google.protobuf.Int64Value id = 1;
+        google.protobuf.Int64Value uid = 2;
+        string symbol = 3;
+        google.protobuf.Int32Value leverage = 4;
+        google.protobuf.Timestamp ctime = 5;
+        google.protobuf.Timestamp mtime = 6;
+}

@@ -1,0 +1,73 @@
+syntax = "proto3";
+import "CoPositionOrderPO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.coPositionOrder";
+option java_outer_classname = "CoPositionOrderBizServiceProto";
+
+package coPositionOrder;
+
+service CoPositionOrderBizService {
+    rpc getById (CoPositionOrderRequest) returns (CoPositionOrderPO) {}
+    rpc selectListByIds (CoPositionOrderIdsRequest) returns (CoPositionOrderListReply) {}
+    rpc selectAll (CoPositionOrderPageRequest) returns (CoPositionOrderListReply) {}
+    rpc selectList (CoPositionOrderPageRequest) returns (CoPositionOrderListReply) {}
+    rpc insertOne (CoPositionOrderRequest) returns (CoPositionOrderReply) {}
+    rpc insertBatch (CoPositionOrderListRequest) returns (CoPositionOrderListReply) {}
+    rpc updateById (CoPositionOrderRequest) returns (CoPositionOrderReply) {}
+    rpc updateBatch (CoPositionOrderListRequest) returns (CoPositionOrderReply) {}
+    rpc removeById (CoPositionOrderRequest) returns (CoPositionOrderReply) {}
+    rpc removeAll (CoPositionOrderIdsRequest) returns (CoPositionOrderReply) {}
+    rpc fundingRateSettleMargin(FundingRateSettleMarginRequest) returns (CoPositionOrderReply){}
+    rpc findAllInSymbolList(FindAllInSymbolListRequest) returns (CoPositionOrderListReply){}
+}
+
+message CoPositionOrderRequest {
+    int64 id = 1;
+    CoPositionOrderPO coPositionOrderPO = 2;
+}
+
+message CoPositionOrderPageRequest {
+    int32 page = 1;
+    int32 size = 2;
+    CoPositionOrderPO coPositionOrderPO = 3;
+}
+message FindAllInSymbolListRequest{
+  int32 status = 1;
+  repeated string symbolList = 2;
+}
+
+message CoPositionOrderListRequest {
+    repeated CoPositionOrderPO coPositionOrderPO = 1;
+}
+
+message CoPositionOrderIdsRequest {
+    repeated int64 id = 1;
+}
+
+message CoPositionOrderReply {
+    bool status = 1;
+    string message = 2;
+    CoPositionOrderPO coPositionOrderPO = 3;
+}
+
+message CoPositionOrderListReply {
+    repeated CoPositionOrderPO coPositionOrderPO = 1;
+    int64 total = 2;
+}
+
+
+message FundingRateSettleMarginPO {
+    string symbol = 1;
+    string side = 2;
+    repeated FundingRateSettleMarginItemPO fundingRateSettleMarginItemPO = 3;
+}
+
+message FundingRateSettleMarginItemPO {
+    int64  uid = 1;
+    string amount = 2;
+}
+
+message FundingRateSettleMarginRequest {
+     FundingRateSettleMarginPO fundingRateSettleMarginPO = 1;
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bijinsuo.business.repository.CoTriggerOrderMapper">
+
+    <resultMap type="com.bijinsuo.business.entity.CoTriggerOrder" id="CoTriggerOrderResult">
+        <result property="id"    column="id"    />
+        <result property="symbol"    column="symbol"    />
+        <result property="uid"    column="uid"    />
+        <result property="triggerType"    column="trigger_type"    typeHandler="com.bijinsuo.business.util.mybatis.typehandler.TriggerPurposeHandler"/>
+        <result property="triggerPrice"    column="trigger_price" />
+        <result property="positionType"    column="position_type"    typeHandler="com.bijinsuo.business.util.mybatis.typehandler.PositionTypeHandler"/>
+        <result property="operateType"    column="operate_type"    typeHandler="com.bijinsuo.business.util.mybatis.typehandler.OperateTypeHandler"/>
+        <result property="operateSide"    column="operate_side"    typeHandler="com.bijinsuo.business.util.mybatis.typehandler.OperateSideHandler"/>
+        <result property="leverageLevel"    column="leverage_level"    />
+        <result property="price"    column="price"    />
+        <result property="volumeBase"    column="volume_base"    />
+        <result property="volumeQuote"    column="volume_Quote"    />
+        <result property="status"    column="status"   typeHandler="com.bijinsuo.business.util.mybatis.typehandler.TriggerStatusHandler" />
+        <result property="memo"    column="memo"    />
+        <result property="expireTime"    column="expire_time"    />
+        <result property="ctime"    column="ctime"    />
+        <result property="mtime"    column="mtime"    />
+        <result property="masterId"    column="master_id"    />
+        <result property="type"    column="type"   typeHandler="com.bijinsuo.business.util.mybatis.typehandler.TriggerTypeHandler" />
+        <result property="positionId"    column="position_id"    />
+        <result property="orderId"    column="order_id"    />
+        <result property="tradeType"    column="trade_type"   typeHandler="com.bijinsuo.business.util.mybatis.typehandler.TradeTypeHandler" />
+        <result property="tradePrice"    column="trade_price"    />
+    </resultMap>
+
+    <sql id="selectCoTriggerOrderVo">
+        select id, symbol, uid, trigger_type, trigger_price, position_type, operate_type, operate_side,
+               leverage_level, price, volume_base, volume_quote, status, memo, expire_time, ctime, mtime, master_id, type, position_id, order_id, trade_type, trade_price from co_trigger_order
+    </sql>
+
+    <select id="selectCoTriggerOrderList" parameterType="CoTriggerOrder" resultMap="CoTriggerOrderResult">
+        <include refid="selectCoTriggerOrderVo"/>
+        <where>
+            <if test="symbol != null  and symbol != ''"> and symbol = #{symbol}</if>
+            <if test="uid != null "> and uid = #{uid}</if>
+            <if test="triggerType != null "> and trigger_type = #{triggerType,  typeHandler=com.bijinsuo.business.util.mybatis.typehandler.TriggerPurposeHandler}</if>
+            <if test="positionType != null "> and position_type = #{positionType,  typeHandler=com.bijinsuo.business.util.mybatis.typehandler.PositionTypeHandler}</if>
+            <if test="operateType != null"> and operate_type = #{operateType, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.OperateTypeHandler}</if>
+            <if test="operateSide != null"> and operate_side = #{operateSide, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.OperateSideHandler}</if>
+            <if test="status != null "> and status = #{status, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.TriggerStatusHandler}</if>
+            <if test="masterId != null "> and master_id = #{masterId}</if>
+            <if test="type != null "> and type = #{type,  typeHandler=com.bijinsuo.business.util.mybatis.typehandler.TriggerTypeHandler}</if>
+            <if test="positionId != null "> and position_id = #{positionId}</if>
+            <if test="orderId != null "> and order_id = #{orderId}</if>
+            <if test="tradeType != null "> and trade_type = #{tradeType, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.TradeTypeHandler}</if>
+            <if test="startTime != null"> and ctime >= #{startTime}</if>
+            <if test="endTime != null"> and ctime <![CDATA[ <= ]]> #{endTime}</if>
+        </where>
+    </select>
+</mapper>

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: co-quotation
+  profiles:
+    active: dev
+
+nacos:
+  config:
+    server-addr: 10.16.64.18:8848
+    group: dev
+    type: yaml
+    namespace: 811fbb06-1d3e-4c05-abc9-3aeaec93290b
+    bootstrap:
+      enable: true
+      log-enable: true
+    data-ids: db-${spring.profiles.active}.yaml,redis-${spring.profiles.active}.yaml,mongo-${spring.profiles.active}.yaml,rocketmq-${spring.profiles.active}.yaml,${spring.application.name}-${spring.profiles.active}.yaml

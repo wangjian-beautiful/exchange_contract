@@ -1,0 +1,70 @@
+syntax = "proto3";
+import "CoTriggerOrderPO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.coTriggerOrder";
+option java_outer_classname = "CoTriggerOrderBizServiceProto";
+
+package coTriggerOrder;
+
+service CoTriggerOrderBizService {
+    rpc getById (CoTriggerOrderRequest) returns (CoTriggerOrderPO) {}
+    rpc selectListByIds (CoTriggerOrderIdsRequest) returns (CoTriggerOrderListReply) {}
+    rpc selectAll (CoTriggerOrderPageRequest) returns (CoTriggerOrderListReply) {}
+    rpc selectList (CoTriggerOrderPageRequest) returns (CoTriggerOrderListReply) {}
+    rpc insertOne (CoTriggerOrderRequest) returns (CoTriggerOrderReply) {}
+    rpc insertBatch (CoTriggerOrderListRequest) returns (CoTriggerOrderListReply) {}
+    rpc updateById (CoTriggerOrderRequest) returns (CoTriggerOrderReply) {}
+    rpc updateBatch (CoTriggerOrderListRequest) returns (CoTriggerOrderReply) {}
+    rpc removeById (CoTriggerOrderRequest) returns (CoTriggerOrderReply) {}
+    rpc removeAll (CoTriggerOrderIdsRequest) returns (CoTriggerOrderReply) {}
+    rpc create (CoTriggerOrderRequest) returns (CoTriggerOrderReply) {}
+    rpc cancelTriggerOrderById(CancelTriggerOrderByIdRequest) returns (CoTriggerOrderReply) {}
+    rpc cancelAllTriggerOrder(CancelAllTriggerOrderRequest) returns (CoTriggerOrderReply) {}
+    rpc selectListByStatus (CoTriggerOrderPageByStatusRequest) returns (CoTriggerOrderListReply) {}
+}
+
+message CoTriggerOrderRequest {
+    int64 id = 1;
+    CoTriggerOrderPO coTriggerOrderPO = 2;
+}
+
+message CoTriggerOrderPageRequest {
+    int32 page = 1;
+    int32 size = 2;
+    CoTriggerOrderPO coTriggerOrderPO = 3;
+}
+message CoTriggerOrderPageByStatusRequest{
+    int32 page = 1;
+    int32 limit = 2;
+    string beginTime = 3;
+    string endTime = 4;
+    repeated int32 status = 5;
+    CoTriggerOrderPO coTriggerOrderPO = 6;
+}
+
+message CoTriggerOrderListRequest {
+    repeated CoTriggerOrderPO coTriggerOrderPO = 1;
+}
+
+message CoTriggerOrderIdsRequest {
+    repeated int64 id = 1;
+}
+
+message CoTriggerOrderReply {
+    bool status = 1;
+    string message = 2;
+    CoTriggerOrderPO coTriggerOrderPO = 3;
+}
+
+message CoTriggerOrderListReply {
+    repeated CoTriggerOrderPO coTriggerOrderPO = 1;
+    int64 total = 2;
+}
+
+message CancelTriggerOrderByIdRequest{
+    int64  id = 1;
+}
+
+message CancelAllTriggerOrderRequest{
+}

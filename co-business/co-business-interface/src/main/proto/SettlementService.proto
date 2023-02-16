@@ -1,0 +1,51 @@
+syntax = "proto3";
+import "SettlementPO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.settlement";
+option java_outer_classname = "SettlementBizServiceProto";
+
+package settlement;
+
+service SettlementBizService {
+    rpc getById (SettlementRequest) returns (SettlementPO) {}
+    rpc selectListByIds (SettlementIdsRequest) returns (SettlementListReply) {}
+    rpc selectAll (SettlementPageRequest) returns (SettlementListReply) {}
+    rpc selectList (SettlementPageRequest) returns (SettlementListReply) {}
+    rpc insertOne (SettlementRequest) returns (SettlementReply) {}
+    rpc insertBatch (SettlementListRequest) returns (SettlementListReply) {}
+    rpc updateById (SettlementRequest) returns (SettlementReply) {}
+    rpc updateBatch (SettlementListRequest) returns (SettlementReply) {}
+    rpc removeById (SettlementRequest) returns (SettlementReply) {}
+    rpc removeAll (SettlementIdsRequest) returns (SettlementReply) {}
+}
+
+message SettlementRequest {
+    int64 id = 1;
+    SettlementPO settlementPO = 2;
+}
+
+message SettlementPageRequest {
+    int32 page = 1;
+    int32 size = 2;
+    SettlementPO settlementPO = 3;
+}
+
+message SettlementListRequest {
+    repeated SettlementPO settlementPO = 1;
+}
+
+message SettlementIdsRequest {
+    repeated int64 id = 1;
+}
+
+message SettlementReply {
+    bool status = 1;
+    string message = 2;
+    SettlementPO settlementPO = 3;
+}
+
+message SettlementListReply {
+    repeated SettlementPO settlementPO = 1;
+    int64 total = 2;
+}

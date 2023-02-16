@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bijinsuo.persist.UserMapper">
+
+    <resultMap type="com.bijinsuo.business.entity.User" id="UserResult">
+        <result property="uid" column="uid"/>
+        <result property="apiKey" column="api_key"/>
+        <result property="deleted" column="delete_flag"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="selectUserVo">
+        select uid, api_key, del_flag, create_by, create_time, update_by, update_time
+        from user
+    </sql>
+
+    <select id="selectUserList" parameterType="com.bijinsuo.business.entity.User" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        <where>
+            <if test="apiKey != null  and apiKey != ''">and api_key = #{apiKey}</if>
+        </where>
+    </select>
+
+    <select id="selectUserByUid" parameterType="Long" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        where uid = #{uid}
+    </select>
+
+    <insert id="insertUser" parameterType="com.bijinsuo.business.entity.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">uid,</if>
+            <if test="apiKey != null">api_key,</if>
+            <if test="delFlag != null">del_flag,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uid != null">#{uid},</if>
+            <if test="apiKey != null">#{apiKey},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateUser" parameterType="com.bijinsuo.business.entity.User">
+        update user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="apiKey != null">api_key = #{apiKey},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where uid = #{uid}
+    </update>
+
+    <update id="resetApiKey" parameterType="com.bijinsuo.business.entity.User">
+        update user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="apiKey != null">api_key = #{apiKey},</if>
+        </trim>
+        where uid = #{uid}
+    </update>
+
+    <update id="deleteUserByUid" parameterType="Long">
+        update user
+        set delete_flag = true
+        where uid = #{uid}
+    </update>
+</mapper>

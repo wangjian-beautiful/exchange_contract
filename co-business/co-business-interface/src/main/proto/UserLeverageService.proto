@@ -1,0 +1,62 @@
+syntax = "proto3";
+import "UserLeveragePO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.userLeverage";
+option java_outer_classname = "UserLeverageBizServiceProto";
+
+package userLeverage;
+
+service UserLeverageBizService {
+    rpc getById (UserLeverageRequest) returns (UserLeveragePO) {}
+    rpc getBySymbol (GetBySymbolRequest) returns (UserLeveragePO) {}
+    rpc selectListByIds (UserLeverageIdsRequest) returns (UserLeverageListReply) {}
+    rpc selectAll (UserLeveragePageRequest) returns (UserLeverageListReply) {}
+    rpc selectList (UserLeveragePageRequest) returns (UserLeverageListReply) {}
+    rpc insertOne (UserLeverageRequest) returns (UserLeverageReply) {}
+    rpc insertBatch (UserLeverageListRequest) returns (UserLeverageListReply) {}
+    rpc updateById (UserLeverageRequest) returns (UserLeverageReply) {}
+    rpc updateBatch (UserLeverageListRequest) returns (UserLeverageReply) {}
+    rpc removeById (UserLeverageRequest) returns (UserLeverageReply) {}
+    rpc removeAll (UserLeverageIdsRequest) returns (UserLeverageReply) {}
+    rpc updateLeverage(UpdateLeverageRequest) returns (UserLeverageReply) {}
+}
+
+message UserLeverageRequest {
+    int64 id = 1;
+    UserLeveragePO userLeveragePO = 2;
+}
+
+message GetBySymbolRequest {
+    string symbol = 1;
+}
+
+message UpdateLeverageRequest{
+    string symbol = 1;
+    int32 leverage = 2;
+
+}
+message UserLeveragePageRequest {
+    int32 page = 1;
+    int32 size = 2;
+    UserLeveragePO userLeveragePO = 3;
+}
+
+message UserLeverageListRequest {
+    repeated UserLeveragePO userLeveragePO = 1;
+}
+
+message UserLeverageIdsRequest {
+    repeated int64 id = 1;
+}
+
+message UserLeverageReply {
+    bool status = 1;
+    string message = 2;
+    UserLeveragePO userLeveragePO = 3;
+}
+
+message UserLeverageListReply {
+    repeated UserLeveragePO userLeveragePO = 1;
+    int64 total = 2;
+}

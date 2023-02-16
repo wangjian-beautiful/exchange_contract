@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bijinsuo.business.repository.UserMapper">
+
+    <resultMap type="com.bijinsuo.business.entity.User" id="UserResult">
+        <result property="uid"    column="uid"    />
+        <result property="apiKey"    column="api_key"    />
+        <result property="tradable"    column="tradable"    />
+        <result property="transferable"    column="transferable"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectUserVo">
+        select uid, api_key, tradable, transferable, del_flag, create_by, create_time, update_by, update_time from user
+    </sql>
+
+    <select id="selectUserList" parameterType="com.bijinsuo.business.entity.User" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        <where>
+            <if test="uid != null"> and uid = #{uid}</if>
+            <if test="startTime != null"> and create_time >= #{startTime}</if>
+            <if test="endTime != null"> and create_time <![CDATA[ <= ]]> #{endTime}</if>
+        </where>
+    </select>
+
+    <select id="selectUserByUid" parameterType="Long" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        where uid = #{uid}
+    </select>
+
+    <insert id="insertUser" parameterType="com.bijinsuo.business.entity.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">uid,</if>
+            <if test="apiKey != null">api_key,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uid != null">#{uid},</if>
+            <if test="apiKey != null">#{apiKey},</if>
+        </trim>
+    </insert>
+
+    <update id="updateUser" parameterType="com.bijinsuo.business.entity.User">
+        update user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="apiKey != null">api_key = #{apiKey},</if>
+            <if test="tradable != null">tradable = #{tradable},</if>
+            <if test="transferable != null">transferable = #{transferable},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where uid = #{uid}
+    </update>
+
+    <update id="switchTradeAuthById">
+        update user set tradable = ~tradable where uid = #{uid}
+    </update>
+
+    <update id="switchTransferAuthById">
+        update user set transferable = ~transferable where uid = #{uid}
+    </update>
+
+
+
+    <delete id="deleteUserByUid" parameterType="Long">
+        delete from user where uid = #{uid}
+    </delete>
+
+    <delete id="deleteUserByUids" parameterType="String">
+        delete from user where uid in
+        <foreach item="uid" collection="array" open="(" separator="," close=")">
+            #{uid}
+        </foreach>
+    </delete>
+
+    <select id="findAccountByUid" parameterType="Long" resultType="com.bijinsuo.business.entity.Account">
+        SELECT uid
+        , SUM(CASE type	WHEN 0 THEN	balance END) AS balance
+        , SUM(CASE type	WHEN 1 THEN	balance END) AS frozen
+        , SUM(CASE type	WHEN 2 THEN	balance END) AS margin
+        FROM account where uid = #{uid} GROUP BY uid;
+    </select>
+</mapper>

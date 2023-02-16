@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bijinsuo.business.repository.PositionMapper">
+
+    <resultMap type="Position" id="CoPositionOrderResult">
+        <result property="id"    column="id"    />
+        <result property="symbol"    column="symbol"    />
+        <result property="uid"    column="uid"    />
+        <result property="positionType"    column="position_type"    typeHandler="com.bijinsuo.business.util.mybatis.typehandler.PositionTypeHandler"/>
+        <result property="positionSide"    column="position_side"    typeHandler="com.bijinsuo.business.util.mybatis.typehandler.OperateSideHandler"/>
+        <result property="leverageLevel"    column="leverage_level"    />
+        <result property="nominalValue"    column="nominal_value"    />
+        <result property="margin"    column="margin"    />
+        <result property="maintenanceMargin"    column="maintenance_margin"    />
+        <result property="closeFee"    column="close_fee"    />
+        <result property="marginRatioMolecule"    column="margin_ratio_molecule"    />
+        <result property="dealBase"    column="deal_base"    />
+        <result property="frozenBase"    column="frozen_base"    />
+        <result property="avgPrice"    column="avg_price"    />
+        <result property="dealQuote"    column="deal_quote"    />
+        <result property="status"    column="status"    typeHandler="com.bijinsuo.business.util.mybatis.typehandler.PositionStatusHandler"/>
+        <result property="ip"    column="ip"    />
+        <result property="source"    column="source"    typeHandler="com.bijinsuo.business.util.mybatis.typehandler.OrderSourceHandler"/>
+        <result property="ctime"    column="ctime"    />
+        <result property="mtime"    column="mtime"    />
+    </resultMap>
+
+    <sql id="selectCoPositionOrderVo">
+        select close_fee, margin_ratio_molecule, frozen_base, id, symbol, uid, position_type, position_side, leverage_level, nominal_value, margin, maintenance_margin, deal_base, avg_price, deal_quote, status, ip, source, ctime, mtime from co_position_order
+    </sql>
+
+    <select id="selectCoPositionOrderList" parameterType="Position" resultMap="CoPositionOrderResult">
+        <include refid="selectCoPositionOrderVo"/>
+        <where>
+            <if test="symbol != null  and symbol != ''"> and symbol = #{symbol}</if>
+            <if test="uid != null "> and uid = #{uid}</if>
+            <if test="positionType != null "> and position_type = #{positionType, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.PositionTypeHandler}</if>
+            <if test="positionSide != null  and positionSide != ''"> and position_side = #{positionSide, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.OperateTypeHandler}</if>
+            <if test="status != null "> and status = #{status, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.PositionStatusHandler}</if>
+            <if test="ip != null  and ip != ''"> and ip = #{ip}</if>
+            <if test="source != null "> and source = #{source, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.OrderSourceHandler}</if>
+            <if test="startTime != null"> and ctime >= #{startTime}</if>
+            <if test="endTime != null"> and ctime <![CDATA[ <= ]]> #{endTime}</if>
+        </where>
+    </select>
+
+
+</mapper>

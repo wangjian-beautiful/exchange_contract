@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('交易流水列表')" />
+</head>
+<body class="gray-bg">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="formId">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            <label>转出账户ID：</label>
+                            <input type="text" name="fromUid"/>
+                        </li>
+                        <li>
+                            <label>转入账户ID：</label>
+                            <input type="text" name="toUid"/>
+                        </li>
+                        <li>
+                            <label>转账说明：</label>
+                            <input type="text" name="meta"/>
+                        </li>
+                        <li>
+                            <label>场景：</label>
+                            <input type="text" name="scene"/>
+                        </li>
+                        <li>
+                            <label>主业务ID：</label>
+                            <input type="text" name="refId"/>
+                        </li>
+                        <li>
+                            <label>操作的UID：</label>
+                            <input type="text" name="opUid"/>
+                        </li>
+                        <li><label>时间范围：</label>
+                            <input type="date" name="startTime"/> 至
+                            <input type="date" name="endTime"/>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                            <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+<!--        <div class="btn-group-sm" id="toolbar" role="group">-->
+<!--            <a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="system:order:add">-->
+<!--                <i class="fa fa-plus"></i> 添加-->
+<!--            </a>-->
+<!--            <a class="btn btn-primary single disabled" onclick="$.operate.edit()" shiro:hasPermission="system:order:edit">-->
+<!--                <i class="fa fa-edit"></i> 修改-->
+<!--            </a>-->
+<!--            <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()" shiro:hasPermission="system:order:remove">-->
+<!--                <i class="fa fa-remove"></i> 删除-->
+<!--            </a>-->
+<!--            <a class="btn btn-warning" onclick="$.table.exportExcel()" shiro:hasPermission="system:order:export">-->
+<!--                <i class="fa fa-download"></i> 导出-->
+<!--            </a>-->
+<!--        </div>-->
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
+        </div>
+    </div>
+</div>
+<th:block th:include="include :: footer" />
+<script th:inline="javascript">
+    var editFlag = [[${@permission.hasPermi('system:transaction:edit')}]];
+    var removeFlag = [[${@permission.hasPermi('system:transaction:remove')}]];
+    var prefix = ctx + "business/transaction";
+
+    $(function() {
+        var options = {
+            url: prefix + "/list",
+            createUrl: prefix + "/add",
+            updateUrl: prefix + "/edit/{id}",
+            removeUrl: prefix + "/remove",
+            exportUrl: prefix + "/export",
+            modalName: "交易流水",
+            columns: [{
+                checkbox: true
+            },
+                {
+                    field: 'id',
+                    title: '${comment}',
+                    visible: false
+                },
+                {
+                    field: 'fromUid',
+                    title: '转出账户ID'
+                },
+                {
+                    field: 'fromType',
+                    title: '转出账户type'
+                },
+                {
+                    field: 'fromBalance',
+                    title: '转出后账户余额'
+                },
+                {
+                    field: 'toUid',
+                    title: '转入账户ID'
+                },
+                {
+                    field: 'toType',
+                    title: '转入账户type'
+                },
+                {
+                    field: 'toBalance',
+                    title: '转入后账户余额'
+                },
+                {
+                    field: 'amount',
+                    title: '发生额'
+                },
+                {
+                    field: 'meta',
+                    title: '转账说明'
+                },
+                {
+                    field: 'scene',
+                    title: '场景'
+                },
+                {
+                    field: 'refType',
+                    title: '主业务表/特性'
+                },
+                {
+                    field: 'refId',
+                    title: '主业务ID'
+                },
+                {
+                    field: 'opUid',
+                    title: '操作的UID'
+                },
+                {
+                    field: 'opIp',
+                    title: '操作的IP'
+                },
+                {
+                    field: 'ctime',
+                    title: '创建时间'
+                },
+                {
+                    field: 'mtime',
+                    title: '修改时间'
+                }]
+        };
+        $.table.init(options);
+    });
+</script>
+</body>
+</html>

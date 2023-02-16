@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('用户列表')" />
+</head>
+<body class="gray-bg">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="formId">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            <label>UID：</label>
+                            <input type="text" name="uid"/>
+                        </li>
+                        <li><label>开通时间：</label>
+                            <input type="date" name="startTime"/> 至
+                            <input type="date" name="endTime"/>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                            <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
+        </div>
+    </div>
+</div>
+<th:block th:include="include :: footer" />
+<script th:inline="javascript">
+    var viewFlag = [[${@permission.hasPermi('system:user:view')}]];
+    var editFlag = [[${@permission.hasPermi('system:user:edit')}]];
+    var prefix = ctx + "business/user";
+
+    function switchTradeAuth(uid) {
+        $.operate.post("/business/user/" + uid + "/switch/trade", null, function (result) {
+            $.operate.ajaxSuccess(result.msg)
+        })
+    }
+
+    function switchTransferAuth(uid) {
+        $.operate.post("/business/user/" + uid + "/switch/transfer", null, function (result) {
+            $.operate.ajaxSuccess(result.msg)
+        })
+    }
+
+    function viewUserDetail(uid, type) {
+        $.operate.get("/business/" + type + "/" + uid, function (result) {
+            $.operate.ajaxSuccess(result.msg)
+        })
+    }
+
+    $(function() {
+        var options = {
+            url: prefix + "/list",
+            createUrl: prefix + "/add",
+            updateUrl: prefix + "/edit/{id}",
+            removeUrl: prefix + "/remove",
+            exportUrl: prefix + "/export",
+            modalName: "用户",
+            columns: [{
+                checkbox: true
+            },
+                {
+                    field: 'index',
+                    align: 'center',
+                    title: "序号",
+                    formatter: function (value, row, index) {
+                        var columnIndex = $.common.sprintf("<input type='hidden' name='index' value='%s'>", $.table.serialNumber(index));
+                        var columnId = $.common.sprintf("<input type='hidden' name='goods[%s].id' value='%s'>", index, row.id);
+                        return columnIndex + $.table.serialNumber(index) + columnId;
+                    }
+                },
+                {
+                    field: 'uid',
+                    title: '用户ID',
+                    visible: true
+                },
+                {
+                    field: 'account.balance',
+                    title: '可用余额',
+                    visible: true
+                },
+                {
+                    field: 'account.frozen',
+                    title: '冻结余额',
+                    visible: true
+                },
+                {
+                    field: 'account.margin',
+                    title: '持仓保证金',
+                    visible: true
+                },
+                {
+                    field: 'createTime',
+                    title: '开通时间',
+                    visible: true
+                },
+                {
+                    title: '查看用户信息',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                        actions.push('<a class="btn btn-success btn-xs ' + viewFlag + '" href="javascript:void(0)" onclick="viewUserDetail(\'position\', ' + row.uid + ')"><i class="fa fa-edit"></i>持仓</a> ');
+                        actions.push('<a class="btn btn-success btn-xs ' + viewFlag + '" href="javascript:void(0)" onclick="viewUserDetail(\'order\', ' + row.uid + ')"><i class="fa fa-edit"></i>委托</a>');
+                        return actions.join('');
+                    }
+                },
+                {
+                    title: '权限管理',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                        var action = row.tradable?"冻结":"解冻";
+                        actions.push('<a class="btn btn-danger btn-xs ' + editFlag + '" href="javascript:void(0)" onclick="switchTradeAuth(\'' + row.uid + '\')"><i class="fa fa-remove"></i>'+action+'交易</a> ');
+                        action = row.transferable?"冻结":"解冻";
+                        actions.push('<a class="btn btn-danger btn-xs ' + editFlag + '" href="javascript:void(0)" onclick="switchTransferAuth(\'' + row.uid + '\')"><i class="fa fa-remove"></i>'+action+'划转</a>');
+                        return actions.join('');
+                    }
+                }]
+        };
+        $.table.init(options);
+    });
+</script>
+</body>
+</html>

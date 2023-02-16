@@ -1,0 +1,48 @@
+syntax = "proto3";
+import "ConfigSymbolMatchingPO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.configSymbolMatching";
+option java_outer_classname = "ConfigSymbolMatchingBizServiceProto";
+
+package configSymbolMatching;
+
+service ConfigSymbolMatchingBizService {
+    rpc getById (ConfigSymbolMatchingRequest) returns (ConfigSymbolMatchingPO) {}
+    rpc selectListByIds (ConfigSymbolMatchingIdsRequest) returns (ConfigSymbolMatchingListReply) {}
+    rpc selectAll (ConfigSymbolMatchingPageRequest) returns (ConfigSymbolMatchingListReply) {}
+    rpc insertOne (ConfigSymbolMatchingRequest) returns (ConfigSymbolMatchingReply) {}
+    rpc insertBatch (ConfigSymbolMatchingListRequest) returns (ConfigSymbolMatchingListReply) {}
+    rpc updateById (ConfigSymbolMatchingRequest) returns (ConfigSymbolMatchingReply) {}
+    rpc updateBatch (ConfigSymbolMatchingListRequest) returns (ConfigSymbolMatchingReply) {}
+    rpc removeById (ConfigSymbolMatchingRequest) returns (ConfigSymbolMatchingReply) {}
+    rpc removeAll (ConfigSymbolMatchingIdsRequest) returns (ConfigSymbolMatchingReply) {}
+}
+
+message ConfigSymbolMatchingRequest {
+    int64 id = 1;
+    ConfigSymbolMatchingPO configSymbolMatchingPO = 2;
+}
+
+message ConfigSymbolMatchingPageRequest {
+    int32 page = 1;
+    int32 size = 2;
+}
+
+message ConfigSymbolMatchingListRequest {
+    repeated ConfigSymbolMatchingPO configSymbolMatchingPO = 1;
+}
+
+message ConfigSymbolMatchingIdsRequest {
+    repeated int64 id = 1;
+}
+
+message ConfigSymbolMatchingReply {
+    bool status = 1;
+    string message = 2;
+    ConfigSymbolMatchingPO configSymbolMatchingPO = 3;
+}
+
+message ConfigSymbolMatchingListReply {
+    repeated ConfigSymbolMatchingPO configSymbolMatchingPO = 1;
+}

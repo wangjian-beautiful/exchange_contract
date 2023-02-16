@@ -1,0 +1,14 @@
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = true
+}
+
+dependencies {
+    api project(":common-parent:common")
+}
+
+dependencies {
+    api group: 'io.seata', name: 'seata-spring-boot-starter', version: '1.4.2'
+}

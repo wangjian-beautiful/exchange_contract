@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('维持保证金率列表')" />
+</head>
+<body class="gray-bg">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="formId">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            <label>交易对：</label>
+                            <input type="text" name="symbol"/>
+                        </li>
+                        <li>
+                            <label>层级：</label>
+                            <input type="text" name="tier"/>
+                        </li>
+                        <li>
+                            <label>持仓 USDT名义价值 起始   左闭右开：</label>
+                            <input type="text" name="notionalValueBegin"/>
+                        </li>
+                        <li>
+                            <label>持仓 USDT名义价值 结束   左闭右开：</label>
+                            <input type="text" name="notionalValueEnd"/>
+                        </li>
+                        <li>
+                            <label>最高杠杆倍数：</label>
+                            <input type="text" name="maxLeverage"/>
+                        </li>
+                        <li>
+                            <label>维持保证金比率：</label>
+                            <input type="text" name="maintenanceMarginRate"/>
+                        </li>
+                        <li>
+                            <label>维持保证金速算额：</label>
+                            <input type="text" name="maintenanceAmount"/>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                            <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+        <div class="btn-group-sm" id="toolbar" role="group">
+            <a class="btn btn-success" onclick="$.operate.add()" shiro:hasPermission="business:maintenance:add">
+                <i class="fa fa-plus"></i> 添加
+            </a>
+            <a class="btn btn-primary single disabled" onclick="$.operate.edit()" shiro:hasPermission="business:maintenance:edit">
+                <i class="fa fa-edit"></i> 修改
+            </a>
+            <a class="btn btn-danger multiple disabled" onclick="$.operate.removeAll()" shiro:hasPermission="business:maintenance:remove">
+                <i class="fa fa-remove"></i> 删除
+            </a>
+            <a class="btn btn-warning" onclick="$.table.exportExcel()" shiro:hasPermission="business:maintenance:export">
+                <i class="fa fa-download"></i> 导出
+            </a>
+        </div>
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
+        </div>
+    </div>
+</div>
+<th:block th:include="include :: footer" />
+<script th:inline="javascript">
+    var editFlag = [[${@permission.hasPermi('business:maintenance:edit')}]];
+    var removeFlag = [[${@permission.hasPermi('business:maintenance:remove')}]];
+    var prefix = ctx + "business/maintenance";
+
+    $(function() {
+        var options = {
+            url: prefix + "/list",
+            createUrl: prefix + "/add",
+            updateUrl: prefix + "/edit/{id}",
+            removeUrl: prefix + "/remove",
+            exportUrl: prefix + "/export",
+            modalName: "维持保证金率",
+            columns: [{
+                checkbox: true
+            },
+                {
+                    field: 'id',
+                    title: '主键',
+                    visible: false
+                },
+                {
+                    field: 'symbol',
+                    title: '交易对'
+                },
+                {
+                    field: 'tier',
+                    title: '层级'
+                },
+                {
+                    field: 'notionalValueBegin',
+                    title: '持仓 USDT名义价值 起始   左闭右开'
+                },
+                {
+                    field: 'notionalValueEnd',
+                    title: '持仓 USDT名义价值 结束   左闭右开'
+                },
+                {
+                    field: 'maxLeverage',
+                    title: '可使用最高杠杆倍数'
+                },
+                {
+                    field: 'maintenanceMarginRate',
+                    title: '维持保证金比率'
+                },
+                {
+                    field: 'maintenanceAmount',
+                    title: '维持保证金速算额'
+                },
+                {
+                    title: '操作',
+                    align: 'center',
+                    formatter: function(value, row, index) {
+                        var actions = [];
+                        actions.push('<a class="btn btn-success btn-xs ' + editFlag + '" href="javascript:void(0)" onclick="$.operate.edit(\'' + row.id + '\')"><i class="fa fa-edit"></i>编辑</a> ');
+                        actions.push('<a class="btn btn-danger btn-xs ' + removeFlag + '" href="javascript:void(0)" onclick="$.operate.remove(\'' + row.id + '\')"><i class="fa fa-remove"></i>删除</a>');
+                        return actions.join('');
+                    }
+                }]
+        };
+        $.table.init(options);
+    });
+</script>
+</body>
+</html>

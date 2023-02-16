@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjs.contract.mapper.ConfigSymbolMatchingMapper">
+
+  <resultMap id="configSymbolMatchingMap" type="com.bjs.contract.entity.ConfigSymbolMatching">
+    <id property="id" column="id"/>
+    <result property="base" column="base"/>
+    <result property="quote" column="quote"/>
+    <result property="isOpen" column="is_open"/>
+    <result property="server" column="server"/>
+    <result property="ctime" column="ctime"/>
+    <result property="mtime" column="mtime"/>
+  </resultMap>
+</mapper>

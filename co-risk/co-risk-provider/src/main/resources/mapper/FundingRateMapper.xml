@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjs.contract.mapper.FundingRateMapper">
+
+  <resultMap id="fundingRateMap" type="com.bjs.contract.entity.FundingRate">
+    <id property="id" column="id"/>
+    <result property="symbol" column="symbol"/>
+    <result property="rate" column="rate"/>
+    <result property="settleTime" column="settle_time"/>
+    <result property="mtime" column="mtime"/>
+    <result property="ctime" column="ctime"/>
+  </resultMap>
+</mapper>

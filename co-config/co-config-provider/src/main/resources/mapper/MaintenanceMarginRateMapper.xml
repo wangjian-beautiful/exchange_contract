@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjs.contract.mapper.MaintenanceMarginRateMapper">
+
+  <resultMap id="maintenanceMarginRateMap" type="com.bjs.contract.entity.MaintenanceMarginRate">
+    <id property="id" column="id"/>
+    <result property="symbol" column="symbol"/>
+    <result property="tier" column="tier"/>
+    <result property="notionalValueBegin" column="notional_value_begin"/>
+    <result property="notionalValueEnd" column="notional_value_end"/>
+    <result property="maxLeverage" column="max_leverage"/>
+    <result property="maintenanceMarginRate" column="maintenance_margin_rate"/>
+    <result property="maintenanceAmount" column="maintenance_amount"/>
+  </resultMap>
+    <select id="getMinRate" resultType="java.lang.String">
+      select min(maintenance_margin_rate) from maintenance_margin_rate where symbol=#{symbol}
+    </select>
+</mapper>

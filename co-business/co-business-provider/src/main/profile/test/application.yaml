@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: co-business
+  profiles:
+    active: test
+
+
+# 测试按照服务更新添加的 这个注释-无视即可
+nacos:
+  config:
+    server-addr: 172.31.34.21:8848
+    group: test
+    type: yaml
+    namespace: ba1a6c58-3791-4aab-8643-f99a7002ccb3
+    bootstrap:
+      enable: true
+      log-enable: true
+    data-ids: db-${spring.profiles.active}.yaml,redis-${spring.profiles.active}.yaml,rocketmq-${spring.profiles.active}.yaml,mongo-${spring.profiles.active}.yaml,${spring.application.name}-${spring.profiles.active}.yaml

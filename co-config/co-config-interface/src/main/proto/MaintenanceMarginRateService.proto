@@ -1,0 +1,81 @@
+syntax = "proto3";
+import "MaintenanceMarginRatePO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.maintenanceMarginRate";
+option java_outer_classname = "MaintenanceMarginRateBizServiceProto";
+
+package maintenanceMarginRate;
+
+service MaintenanceMarginRateBizService {
+  rpc getById (MaintenanceMarginRateRequest) returns (MaintenanceMarginRatePO) {}
+  rpc getByNominalValue (NominalValueRequest) returns (MaintenanceMarginRatePO) {}
+  rpc SymbolMaxLeverage(SymbolMaxLeverageRequest) returns (MaintenanceMarginRatePO) {}
+  rpc SymbolInterval(SymbolIntervalRequest) returns (SymbolIntervalReply) {}
+  rpc selectListByIds (MaintenanceMarginRateIdsRequest) returns (MaintenanceMarginRateListReply) {}
+  rpc selectAll (MaintenanceMarginRatePageRequest) returns (MaintenanceMarginRateListReply) {}
+  rpc selectList (MaintenanceMarginRatePageRequest) returns (MaintenanceMarginRateListReply) {}
+  rpc insertOne (MaintenanceMarginRateRequest) returns (MaintenanceMarginRateReply) {}
+  rpc insertBatch (MaintenanceMarginRateListRequest) returns (MaintenanceMarginRateListReply) {}
+  rpc updateById (MaintenanceMarginRateRequest) returns (MaintenanceMarginRateReply) {}
+  rpc updateBatch (MaintenanceMarginRateListRequest) returns (MaintenanceMarginRateReply) {}
+  rpc removeById (MaintenanceMarginRateRequest) returns (MaintenanceMarginRateReply) {}
+  rpc removeAll (MaintenanceMarginRateIdsRequest) returns (MaintenanceMarginRateReply) {}
+  rpc getMaintenanceMarginRateMin(MaintenanceMarginRateMinRequest) returns(MaintenanceMarginRateMinReply){}
+}
+
+message MaintenanceMarginRateRequest {
+  int64 id = 1;
+  MaintenanceMarginRatePO maintenanceMarginRatePO = 2;
+}
+
+message NominalValueRequest {
+  string nominalValue = 1;
+  string symbol = 2;
+}
+
+message SymbolMaxLeverageRequest {
+  string symbol = 1;
+}
+
+message SymbolIntervalRequest{
+  string symbol = 1;
+}
+
+message SymbolIntervalReply{
+  MaintenanceMarginRatePO min = 1;
+  MaintenanceMarginRatePO max = 2;
+}
+
+message MaintenanceMarginRatePageRequest {
+  int32 page = 1;
+  int32 size = 2;
+  MaintenanceMarginRatePO maintenanceMarginRatePO = 3;
+}
+
+message MaintenanceMarginRateListRequest {
+  repeated MaintenanceMarginRatePO maintenanceMarginRatePO = 1;
+}
+
+message MaintenanceMarginRateIdsRequest {
+  repeated int64 id = 1;
+}
+
+message MaintenanceMarginRateReply {
+  bool status = 1;
+  string message = 2;
+  MaintenanceMarginRatePO maintenanceMarginRatePO = 3;
+}
+
+message MaintenanceMarginRateListReply {
+  repeated MaintenanceMarginRatePO maintenanceMarginRatePO = 1;
+  int64 total = 2;
+}
+
+message MaintenanceMarginRateMinRequest{
+  string symbol=1;
+}
+
+message MaintenanceMarginRateMinReply{
+  string minRate=1;
+}

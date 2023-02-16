@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.maintenanceMarginRate";
+option java_outer_classname = "MaintenanceMarginRatePOProto";
+
+package maintenanceMarginRate;
+
+message MaintenanceMarginRatePO{
+        google.protobuf.Int64Value id = 1;
+        string symbol = 2;
+        google.protobuf.Int32Value tier = 3;
+        string notionalValueBegin = 4;
+        string notionalValueEnd = 5;
+        google.protobuf.Int32Value maxLeverage = 6;
+        string maintenanceMarginRate = 7;
+        string maintenanceAmount = 8;
+}

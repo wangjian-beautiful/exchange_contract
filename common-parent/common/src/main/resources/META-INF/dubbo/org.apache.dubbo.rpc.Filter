@@ -1,0 +1,2 @@
+SetTokenFilter=com.bijinsuo.common.identify.dubbo.SetTokenFilter
+ExtractTokenFilter=com.bijinsuo.common.identify.dubbo.ExtractTokenFilter

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bijinsuo.business.repository.CoConfigMapper">
+
+    <resultMap type="CoConfig" id="CoConfigResult">
+        <result property="id"    column="id"    />
+        <result property="symbol"    column="symbol"    />
+        <result property="base"    column="base"    />
+        <result property="quote"    column="quote"    />
+        <result property="contractName"    column="contract_name"    />
+        <result property="contractOtherName"    column="contract_other_name"    />
+        <result property="capitalIntervalMin"    column="capital_interval_min"    />
+        <result property="capitalIntervalMax"    column="capital_interval_max"    />
+        <result property="openMakerFeeRate"    column="open_maker_fee_rate"    />
+        <result property="openTakerFeeRate"    column="open_taker_fee_rate"    />
+        <result property="closeMakerFeeRate"    column="close_maker_fee_rate"    />
+        <result property="closeTakerFeeRate"    column="close_taker_fee_rate"    />
+        <result property="minMakerFee"    column="min_maker_fee"    />
+        <result property="minTakerFee"    column="min_taker_fee"    />
+        <result property="riskAlarmWeak"    column="risk_alarm_weak"    />
+        <result property="riskAlarmMiddle"    column="risk_alarm_middle"    />
+        <result property="riskAlarmStrong"    column="risk_alarm_strong"    />
+        <result property="priceLimitRate"    column="price_limit_rate"    />
+        <result property="status"    column="status"   typeHandler="com.bijinsuo.business.util.mybatis.typehandler.CoConfigStatusHandler"   />
+        <result property="show"    column="show"    typeHandler="com.bijinsuo.business.util.mybatis.typehandler.CoConfigShowHandler" />
+        <result property="ctime"    column="ctime"    />
+        <result property="mtime"    column="mtime"    />
+        <result property="minOpenBase"    column="min_open_base"    />
+        <result property="maxOpenBase"    column="max_open_base"    />
+        <result property="minOpenQuote"    column="min_open_quote"    />
+        <result property="maxOpenQuote"    column="max_open_quote"    />
+        <result property="basePrecision"    column="base_precision"    />
+        <result property="quotePrecision"    column="quote_precision"    />
+        <result property="pricePrecision"    column="price_precision"    />
+    </resultMap>
+
+    <sql id="selectCoConfigVo">
+        select id, symbol, base, quote, contract_name, contract_other_name, capital_interval_min, capital_interval_max, open_maker_fee_rate, open_taker_fee_rate, close_maker_fee_rate, close_taker_fee_rate, min_maker_fee, min_taker_fee, risk_alarm_weak, risk_alarm_middle, risk_alarm_strong, price_limit_rate, status, `show`, ctime, mtime, min_open_base, max_open_base, min_open_quote, max_open_quote, base_precision, quote_precision, price_precision from contract_config
+    </sql>
+
+    <select id="selectCoConfigList" parameterType="CoConfig" resultMap="CoConfigResult">
+        <include refid="selectCoConfigVo"/>
+        <where>
+            <if test="symbol != null  and symbol != ''"> and symbol = #{symbol}</if>
+            <if test="base != null  and base != ''"> and base = #{base}</if>
+            <if test="quote != null  and quote != ''"> and quote = #{quote}</if>
+            <if test="contractName != null  and contractName != ''"> and contract_name like concat('%', #{contractName}, '%')</if>
+            <if test="contractOtherName != null  and contractOtherName != ''"> and contract_other_name like concat('%', #{contractOtherName}, '%')</if>
+            <if test="status != null "> and status = #{status, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.CoConfigStatusHandler  }</if>
+            <if test="show != null "> and `show` = #{show, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.CoConfigShowHandler}</if>
+        </where>
+    </select>
+
+    <select id="selectCoConfigById" parameterType="Long" resultMap="CoConfigResult">
+        <include refid="selectCoConfigVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertCoConfig" parameterType="CoConfig" useGeneratedKeys="true" keyProperty="id">
+        insert into contract_config
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="symbol != null">symbol,</if>
+            <if test="base != null">base,</if>
+            <if test="quote != null">quote,</if>
+            <if test="contractName != null">contract_name,</if>
+            <if test="contractOtherName != null">contract_other_name,</if>
+            <if test="capitalIntervalMin != null">capital_interval_min,</if>
+            <if test="capitalIntervalMax != null">capital_interval_max,</if>
+            <if test="openMakerFeeRate != null">open_maker_fee_rate,</if>
+            <if test="openTakerFeeRate != null">open_taker_fee_rate,</if>
+            <if test="closeMakerFeeRate != null">close_maker_fee_rate,</if>
+            <if test="closeTakerFeeRate != null">close_taker_fee_rate,</if>
+            <if test="minMakerFee != null">min_maker_fee,</if>
+            <if test="minTakerFee != null">min_taker_fee,</if>
+            <if test="riskAlarmWeak != null">risk_alarm_weak,</if>
+            <if test="riskAlarmMiddle != null">risk_alarm_middle,</if>
+            <if test="riskAlarmStrong != null">risk_alarm_strong,</if>
+            <if test="priceLimitRate != null">price_limit_rate,</if>
+            <if test="status != null">status,</if>
+            <if test="show != null">show,</if>
+            <if test="ctime != null">ctime,</if>
+            <if test="mtime != null">mtime,</if>
+            <if test="minOpenBase != null">min_open_base,</if>
+            <if test="maxOpenBase != null">max_open_base,</if>
+            <if test="minOpenQuote != null">min_open_quote,</if>
+            <if test="maxOpenQuote != null">max_open_quote,</if>
+            <if test="basePrecision != null">base_precision,</if>
+            <if test="quotePrecision != null">quote_precision,</if>
+            <if test="pricePrecision != null">price_precision,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="symbol != null">#{symbol},</if>
+            <if test="base != null">#{base},</if>
+            <if test="quote != null">#{quote},</if>
+            <if test="contractName != null">#{contractName},</if>
+            <if test="contractOtherName != null">#{contractOtherName},</if>
+            <if test="capitalIntervalMin != null">#{capitalIntervalMin},</if>
+            <if test="capitalIntervalMax != null">#{capitalIntervalMax},</if>
+            <if test="openMakerFeeRate != null">#{openMakerFeeRate},</if>
+            <if test="openTakerFeeRate != null">#{openTakerFeeRate},</if>
+            <if test="closeMakerFeeRate != null">#{closeMakerFeeRate},</if>
+            <if test="closeTakerFeeRate != null">#{closeTakerFeeRate},</if>
+            <if test="minMakerFee != null">#{minMakerFee},</if>
+            <if test="minTakerFee != null">#{minTakerFee},</if>
+            <if test="riskAlarmWeak != null">#{riskAlarmWeak},</if>
+            <if test="riskAlarmMiddle != null">#{riskAlarmMiddle},</if>
+            <if test="riskAlarmStrong != null">#{riskAlarmStrong},</if>
+            <if test="priceLimitRate != null">#{priceLimitRate},</if>
+            <if test="status != null">#{status, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.CoConfigStatusHandler},</if>
+            <if test="show != null">#{show, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.CoConfigShowHandler},</if>
+            <if test="ctime != null">#{ctime},</if>
+            <if test="mtime != null">#{mtime},</if>
+            <if test="minOpenBase != null">#{minOpenBase},</if>
+            <if test="maxOpenBase != null">#{maxOpenBase},</if>
+            <if test="minOpenQuote != null">#{minOpenQuote},</if>
+            <if test="maxOpenQuote != null">#{maxOpenQuote},</if>
+            <if test="basePrecision != null">#{basePrecision},</if>
+            <if test="quotePrecision != null">#{quotePrecision},</if>
+            <if test="pricePrecision != null">#{pricePrecision},</if>
+        </trim>
+    </insert>
+
+    <update id="updateCoConfig" parameterType="CoConfig">
+        update contract_config
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="symbol != null">symbol = #{symbol},</if>
+            <if test="base != null">base = #{base},</if>
+            <if test="quote != null">quote = #{quote},</if>
+            <if test="contractName != null">contract_name = #{contractName},</if>
+            <if test="contractOtherName != null">contract_other_name = #{contractOtherName},</if>
+            <if test="capitalIntervalMin != null">capital_interval_min = #{capitalIntervalMin},</if>
+            <if test="capitalIntervalMax != null">capital_interval_max = #{capitalIntervalMax},</if>
+            <if test="openMakerFeeRate != null">open_maker_fee_rate = #{openMakerFeeRate},</if>
+            <if test="openTakerFeeRate != null">open_taker_fee_rate = #{openTakerFeeRate},</if>
+            <if test="closeMakerFeeRate != null">close_maker_fee_rate = #{closeMakerFeeRate},</if>
+            <if test="closeTakerFeeRate != null">close_taker_fee_rate = #{closeTakerFeeRate},</if>
+            <if test="minMakerFee != null">min_maker_fee = #{minMakerFee},</if>
+            <if test="minTakerFee != null">min_taker_fee = #{minTakerFee},</if>
+            <if test="riskAlarmWeak != null">risk_alarm_weak = #{riskAlarmWeak},</if>
+            <if test="riskAlarmMiddle != null">risk_alarm_middle = #{riskAlarmMiddle},</if>
+            <if test="riskAlarmStrong != null">risk_alarm_strong = #{riskAlarmStrong},</if>
+            <if test="priceLimitRate != null">price_limit_rate = #{priceLimitRate},</if>
+            <if test="status != null">status = #{status,  typeHandler=com.bijinsuo.business.util.mybatis.typehandler.CoConfigStatusHandler  },</if>
+            <if test="show != null">`show` = #{show,  typeHandler=com.bijinsuo.business.util.mybatis.typehandler.CoConfigShowHandler },</if>
+            <if test="ctime != null">ctime = #{ctime},</if>
+            <if test="mtime != null">mtime = #{mtime},</if>
+            <if test="minOpenBase != null">min_open_base = #{minOpenBase},</if>
+            <if test="maxOpenBase != null">max_open_base = #{maxOpenBase},</if>
+            <if test="minOpenQuote != null">min_open_quote = #{minOpenQuote},</if>
+            <if test="maxOpenQuote != null">max_open_quote = #{maxOpenQuote},</if>
+            <if test="basePrecision != null">base_precision = #{basePrecision},</if>
+            <if test="quotePrecision != null">quote_precision = #{quotePrecision},</if>
+            <if test="pricePrecision != null">price_precision = #{pricePrecision},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteCoConfigById" parameterType="Long">
+        delete from contract_config where id = #{id}
+    </delete>
+
+    <delete id="deleteCoConfigByIds" parameterType="String">
+        delete from contract_config where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

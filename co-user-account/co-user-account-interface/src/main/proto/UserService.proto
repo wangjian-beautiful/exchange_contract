@@ -1,0 +1,51 @@
+syntax = "proto3";
+import "UserPO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.user";
+option java_outer_classname = "UserBizServiceProto";
+
+package user;
+
+service UserBizService {
+    rpc getById (UserRequest) returns (UserPO) {}
+    rpc selectListByIds (UserIdsRequest) returns (UserListReply) {}
+    rpc selectAll (UserPageRequest) returns (UserListReply) {}
+    rpc selectList (UserPageRequest) returns (UserListReply) {}
+    rpc insertOne (UserRequest) returns (UserReply) {}
+    rpc insertBatch (UserListRequest) returns (UserListReply) {}
+    rpc updateById (UserRequest) returns (UserReply) {}
+    rpc updateBatch (UserListRequest) returns (UserReply) {}
+    rpc removeById (UserRequest) returns (UserReply) {}
+    rpc removeAll (UserIdsRequest) returns (UserReply) {}
+}
+
+message UserRequest {
+    int64 id = 1;
+    UserPO userPO = 2;
+}
+
+message UserPageRequest {
+    int32 page = 1;
+    int32 size = 2;
+    UserPO userPO = 3;
+}
+
+message UserListRequest {
+    repeated UserPO userPO = 1;
+}
+
+message UserIdsRequest {
+    repeated int64 id = 1;
+}
+
+message UserReply {
+    bool status = 1;
+    string message = 2;
+    UserPO userPO = 3;
+}
+
+message UserListReply {
+    repeated UserPO userPO = 1;
+    int64 total = 2;
+}

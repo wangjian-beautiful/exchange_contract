@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjs.contract.mapper.TransactionMapper">
+
+    <resultMap id="transactionMap" type="com.bjs.contract.entity.Transaction">
+        <id property="id" column="id"/>
+        <result property="fromUid" column="from_uid"/>
+        <result property="fromType" column="from_type"/>
+        <result property="fromBalance" column="from_balance"/>
+        <result property="toUid" column="to_uid"/>
+        <result property="toType" column="to_type"/>
+        <result property="toBalance" column="to_balance"/>
+        <result property="amount" column="amount"/>
+        <result property="meta" column="meta"/>
+        <result property="scene" column="scene"/>
+        <result property="refType" column="ref_type"/>
+        <result property="refId" column="ref_id"/>
+        <result property="opUid" column="op_uid"/>
+        <result property="opIp" column="op_ip"/>
+        <result property="ctime" column="ctime"/>
+        <result property="mtime" column="mtime"/>
+    </resultMap>
+    <select id="getUserTransactionList" resultType="com.bjs.contract.entity.Transaction">
+        select * from transaction
+        <where>
+            op_uid=#{uid}
+            <if test="type !=null and type !=''">
+                and scene=#{type}
+            </if>
+            <if test="beginTime !=null and beginTime!=''">
+                and ctime &gt;=#{beginTime}
+            </if>
+            <if test="endTime !=null and endTime !=''">
+                and ctime &lt;=#{endTime}
+            </if>
+        </where>
+        order by ctime desc
+    </select>
+    <select id="count" resultType="java.lang.Integer">
+        select count(*) from transaction
+        <where>
+            op_uid=#{uid}
+            <if test="type !=null and type !=''">
+                and scene=#{type}
+            </if>
+            <if test="beginTime !=null and beginTime!=''">
+                and ctime &gt;=#{beginTime}
+            </if>
+            <if test="endTime !=null and endTime !=''">
+                and ctime &lt;=#{endTime}
+            </if>
+        </where>
+    </select>
+</mapper>

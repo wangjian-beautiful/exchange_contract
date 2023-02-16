@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('【请填写功能名称】列表')" />
+</head>
+<body class="gray-bg">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="formId">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            <label>交易对：</label>
+                            <input type="text" name="symbol"/>
+                        </li>
+                        <li>
+                            <label>用户uid：</label>
+                            <input type="text" name="uid"/>
+                        </li>
+                        <li>
+                            <label>持仓订单id：</label>
+                            <input type="text" name="positionId"/>
+                        </li>
+                        <li>
+                            <label>委托订单id：</label>
+                            <input type="text" name="orderId"/>
+                        </li>
+                        <li><label>时间范围：</label>
+                            <input type="date" name="startTime"/> 至
+                            <input type="date" name="endTime"/>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                            <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
+        </div>
+    </div>
+</div>
+<th:block th:include="include :: footer" />
+<script th:inline="javascript">
+    var editFlag = [[${@permission.hasPermi('system:trade:edit')}]];
+    var removeFlag = [[${@permission.hasPermi('system:trade:remove')}]];
+    var prefix = ctx + "business/trade";
+
+    $(function() {
+        var options = {
+            url: prefix + "/list",
+            createUrl: prefix + "/add",
+            updateUrl: prefix + "/edit/{id}",
+            removeUrl: prefix + "/remove",
+            exportUrl: prefix + "/export",
+            modalName: "【请填写功能名称】",
+            columns: [{
+                checkbox: true
+            },
+                {
+                    field: 'id',
+                    title: '自增主键',
+                    visible: false
+                },
+                {
+                    field: 'symbol',
+                    title: '交易对'
+                },
+                {
+                    field: 'tradeNo',
+                    title: '撮合队编号'
+                },
+                {
+                    field: 'uid',
+                    title: '用户uid'
+                },
+                {
+                    field: 'positionId',
+                    title: '持仓订单id'
+                },
+                {
+                    field: 'orderId',
+                    title: '委托订单id'
+                },
+                {
+                    field: 'positionSide',
+                    title: '开平仓方向'
+                },
+                {
+                    field: 'operateSide',
+                    title: '买卖方向'
+                },
+                {
+                    field: 'price',
+                    title: '成交价格'
+                },
+                {
+                    field: 'volumeBase',
+                    title: '成交数量 base'
+                },
+                {
+                    field: 'volumeQuote',
+                    title: '成交数量 quote'
+                },
+                {
+                    field: 'trendSide',
+                    title: '主动单方向'
+                },
+                {
+                    field: 'fee',
+                    title: '手续费'
+                },
+                {
+                    field: 'ctime',
+                    title: '创建时间'
+                },
+                {
+                    field: 'mtime',
+                    title: '更新时间'
+                }]
+        };
+        $.table.init(options);
+    });
+</script>
+</body>
+</html>

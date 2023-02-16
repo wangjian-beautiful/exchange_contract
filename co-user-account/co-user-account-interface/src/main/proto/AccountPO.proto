@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.account";
+option java_outer_classname = "AccountPOProto";
+
+package account;
+
+message AccountPO{
+        google.protobuf.Int64Value id = 1;
+        google.protobuf.Int64Value uid = 2;
+        google.protobuf.Int32Value type = 3;
+        string balance = 4;
+        string tag = 5;
+        google.protobuf.Timestamp ctime = 6;
+        google.protobuf.Timestamp mtime = 7;
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('【请填写功能名称】列表')" />
+</head>
+<body class="gray-bg">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="formId">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            <label>币对：</label>
+                            <input type="text" name="symbol"/>
+                        </li>
+                        <li>
+                            <label>委托id：</label>
+                            <input type="text" name="id"/>
+                        </li>
+                        <li>
+                            <label>用户id：</label>
+                            <input type="text" name="uid"/>
+                        </li>
+                        <li>
+                            <label>持仓类型：</label>
+                            <select name="positionType">
+                                <option value="" selected></option>
+                                <option value="1">全仓</option>
+                                <option value="2">逐仓</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>开平仓方向：</label>
+                            <select name="operateType">
+                                <option value="" selected></option>
+                                <option value="open">开仓</option>
+                                <option value="close">平仓</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>买卖方向：</label>
+                            <select name="operateSide">
+                                <option value="" selected></option>
+                                <option value="buy">买入</option>
+                                <option value="sell">卖出</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>订单状态：</label>
+                            <select name="status">
+                                <option value="" selected></option>
+                                <option value="0">INIT</option>
+                                <option value="1">NEW</option>
+                                <option value="2">FILLED</option>
+                                <option value="3">PART_FILLED</option>
+                                <option value="4">CANCELED</option>
+                                <option value="5">PENDING_CANCEL</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label>订单来源：</label>
+                            <select name="source">
+                                <option value="" selected></option>
+                                <option value="1">WEB</option>
+                                <option value="2">APP</option>
+                                <option value="3">API</option>
+                                <option value="4">OTHER</option>
+                            </select>
+                        </li>
+                        <li><label>下单时间：</label>
+                            <input type="date" name="startTime"/> 至
+                            <input type="date" name="endTime"/>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                            <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
+        </div>
+    </div>
+</div>
+<th:block th:include="include :: footer" />
+<script th:inline="javascript">
+    var editFlag = [[${@permission.hasPermi('system:order:edit')}]];
+    var removeFlag = [[${@permission.hasPermi('system:order:remove')}]];
+    var prefix = ctx + "business/order";
+
+    $(function() {
+        var options = {
+            url: prefix + "/list",
+            createUrl: prefix + "/add",
+            updateUrl: prefix + "/edit/{id}",
+            removeUrl: prefix + "/remove",
+            exportUrl: prefix + "/export",
+            modalName: "【请填写功能名称】",
+            columns: [{
+                checkbox: true
+            },
+                {
+                    field: 'id',
+                    title: '主键',
+                    visible: false
+                },
+                {
+                    field: 'triggerOrderId',
+                    title: '条件委托id'
+                },
+                {
+                    field: 'uid',
+                    title: '用户id'
+                },
+                {
+                    field: 'positionType',
+                    title: '持仓类型'
+                },
+                {
+                    field: 'operateType',
+                    title: '开平仓方向'
+                },
+                {
+                    field: 'operateSide',
+                    title: '买卖方向'
+                },
+                {
+                    field: 'type',
+                    title: '订单类型'
+                },
+                {
+                    field: 'leverageLevel',
+                    title: '杠杆倍数'
+                },
+                {
+                    field: 'price',
+                    title: '下单价格'
+                },
+                {
+                    field: 'volumeBase',
+                    title: '下单数量 base'
+                },
+                {
+                    field: 'volumeQuote',
+                    title: '下单数量 quote'
+                },
+                {
+                    field: 'status',
+                    title: '订单状态'
+                },
+                {
+                    field: 'ip',
+                    title: '订单来源ip'
+                },
+                {
+                    field: 'source',
+                    title: '订单来源'
+                },
+                {
+                    field: 'dealBase',
+                    title: '成交数量'
+                },
+                {
+                    field: 'avgPrice',
+                    title: '成交均价'
+                },
+                {
+                    field: 'dealQuote',
+                    title: '成交数额'
+                },
+                {
+                    field: 'ctime',
+                    title: '创建时间'
+                }]
+        };
+        $.table.init(options);
+    });
+</script>
+</body>
+</html>

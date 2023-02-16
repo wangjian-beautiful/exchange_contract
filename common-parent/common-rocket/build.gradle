@@ -1,0 +1,18 @@
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = true
+}
+
+dependencies {
+    api project(":common-parent:common")
+}
+
+dependencies {
+    api('org.apache.rocketmq:rocketmq-spring-boot-starter:2.2.2') {
+        exclude module: "spring-boot-starter"
+        exclude module: "spring-core"
+        exclude module: "spring-webmv"
+    }
+}

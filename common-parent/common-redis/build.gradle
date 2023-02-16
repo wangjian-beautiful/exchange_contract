@@ -1,0 +1,17 @@
+bootJar{
+    enabled = false
+}
+jar{
+    enabled = true
+}
+
+dependencies {
+    api project(":common-parent:common")
+}
+
+dependencies {
+    api group: 'org.springframework.boot', name:'spring-boot'
+    implementation 'redis.clients:jedis:3.6.3'
+    implementation 'org.springframework.data:spring-data-redis'
+    api 'org.redisson:redisson-spring-boot-starter:3.16.3'
+}

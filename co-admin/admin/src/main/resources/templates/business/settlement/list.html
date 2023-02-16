@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <th:block th:include="include :: header('【请填写功能名称】列表')" />
+</head>
+<body class="gray-bg">
+<div class="container-div">
+    <div class="row">
+        <div class="col-sm-12 search-collapse">
+            <form id="formId">
+                <div class="select-list">
+                    <ul>
+                        <li>
+                            <label>交易对：</label>
+                            <input type="text" name="symbol"/>
+                        </li>
+                        <li>
+                            <label>用户id：</label>
+                            <input type="text" name="uid"/>
+                        </li>
+                        <li>
+                            <label>平仓委托订单id：</label>
+                            <input type="text" name="coverOrderId"/>
+                        </li>
+                        <li>
+                            <label>持仓订单id：</label>
+                            <input type="text" name="positionOrderId"/>
+                        </li>
+                        <li>
+                            <label>结算时间：</label>
+                            <input type="date" name="startTime"/> 至
+                            <input type="date" name="endTime"/>
+                        </li>
+                        <li>
+                            <a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                            <a class="btn btn-warning btn-rounded btn-sm" onclick="$.form.reset()"><i class="fa fa-refresh"></i>&nbsp;重置</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-sm-12 select-table table-striped">
+            <table id="bootstrap-table"></table>
+        </div>
+    </div>
+</div>
+<th:block th:include="include :: footer" />
+<script th:inline="javascript">
+    var editFlag = [[${@permission.hasPermi('system:settlement:edit')}]];
+    var removeFlag = [[${@permission.hasPermi('system:settlement:remove')}]];
+    var prefix = ctx + "business/settlement";
+
+    $(function() {
+        var options = {
+            url: prefix + "/list",
+            createUrl: prefix + "/add",
+            updateUrl: prefix + "/edit/{id}",
+            removeUrl: prefix + "/remove",
+            exportUrl: prefix + "/export",
+            modalName: "【请填写功能名称】",
+            columns: [{
+                checkbox: true
+            },
+                {
+                    field: 'id',
+                    title: '${comment}',
+                    visible: false
+                },
+                {
+                    field: 'symbol',
+                    title: '交易对'
+                },
+                {
+                    field: 'uid',
+                    title: '用户id'
+                },
+                {
+                    field: 'coverOrderId',
+                    title: '平仓委托订单id'
+                },
+                {
+                    field: 'positionOrderId',
+                    title: '持仓订单id'
+                },
+                {
+                    field: 'settleBase',
+                    title: '结算数量'
+                },
+                {
+                    field: 'settleQuote',
+                    title: '结算金额'
+                },
+                {
+                    field: 'settleAvgPrice',
+                    title: '结算均价'
+                },
+                {
+                    field: 'ctime',
+                    title: '创建时间'
+                },
+                {
+                    field: 'mtime',
+                    title: '更新时间'
+                },
+                {
+                    field: 'profit',
+                    title: '结算盈亏'
+                },
+                {
+                    field: 'fee',
+                    title: '结算手续费'
+                }]
+        };
+        $.table.init(options);
+    });
+</script>
+</body>
+</html>

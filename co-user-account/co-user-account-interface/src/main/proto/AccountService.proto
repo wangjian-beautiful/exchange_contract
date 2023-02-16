@@ -1,0 +1,143 @@
+syntax = "proto3";
+import "AccountPO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.account";
+option java_outer_classname = "AccountBizServiceProto";
+
+package account;
+
+service AccountBizService {
+  rpc getById (AccountRequest) returns (AccountPO) {}
+  rpc selectListByIds (AccountIdsRequest) returns (AccountListReply) {}
+  rpc selectAll (AccountPageRequest) returns (AccountListReply) {}
+  rpc selectList (AccountPageRequest) returns (AccountListReply) {}
+  rpc insertOne (AccountRequest) returns (AccountReply) {}
+  rpc insertBatch (AccountListRequest) returns (AccountListReply) {}
+  rpc updateById (AccountRequest) returns (AccountReply) {}
+  rpc updateBatch (AccountListRequest) returns (AccountReply) {}
+  rpc removeById (AccountRequest) returns (AccountReply) {}
+  rpc removeAll (AccountIdsRequest) returns (AccountReply) {}
+  rpc accountOperate(AccountOperate) returns(AccountReply) {}
+  rpc getUserBalance(AccountRequest) returns(AccountReply) {}
+  rpc getUidBalance(AccountUserIdRequest)  returns(AccountReply) {}
+  rpc getByUidAndType (AccountRequest) returns (AccountPO) {}
+  rpc freeze (AccountRequest) returns (AccountReply) {}
+  rpc AccountRateDeduction(UserAccountTransferListRequest) returns (UserAccountReply){}
+  rpc AccountRateAdd(UserAccountTransferListRequest) returns(AccountReply){}
+  rpc getUserAccountList(AccountUidRequest) returns(UserAccountListReply){}
+  rpc getUserTagAccount(AccountUserTagRequest) returns(UserTagResponse){}
+  rpc accountTransfer(AccountTransferReq) returns(AccountReply){}
+}
+
+message AccountRequest {
+  int64 id = 1;
+  AccountPO accountPO = 2;
+}
+
+message AccountRateRequest{
+  int64 id = 1;
+  string amount = 2;
+
+}
+
+message AccountUserIdRequest{
+  int64 uid = 1;
+  int64 type = 2;
+}
+
+message AccountUserTagRequest{
+  int64 uid=1;
+  string tag=2;
+}
+
+
+message UserTagResponse{
+  string amount=1;
+}
+
+
+message AccountOperate{
+  int64  uid = 1;
+  string amount = 2;
+  string symbol = 3;
+  string scene = 4;
+  string refType = 5;
+  int64  refId = 6;
+  string profitAndLoss = 7;
+  string ventureCapital = 8;
+  string serviceCharge = 9;
+}
+
+message AccountPageRequest {
+  int32 page = 1;
+  int32 size = 2;
+  AccountPO accountPO = 3;
+}
+
+message AccountListRequest {
+  repeated AccountPO accountPO = 1;
+}
+
+message AccountIdsRequest {
+  repeated int64 id = 1;
+}
+
+message AccountUidRequest{
+  int64 uid=1;
+}
+
+message AccountReply {
+  bool status = 1;
+  string message = 2;
+  AccountPO accountPO = 3;
+}
+
+message AccountListReply {
+  repeated AccountPO accountPO = 1;
+  int64 total = 2;
+}
+
+message UserAccountTransferPO {
+  int64  uid = 1;
+  string amount = 2;
+  string  symbol = 3;
+}
+
+message UserAccountTransferResponse {
+  int64  uid = 1;
+  string arrears = 2;
+}
+
+message UserAccountList{
+  string canUseAmount=1;
+  string totalAmount=2;
+  string isolateMargin=3;
+  string lockAmount=4;
+  string totalMargin=5;
+  string symbol=6;
+}
+
+
+message AccountTransferReq{
+  int64 uid=1;
+  string amount=2;
+  string symbol=3;
+  string type=4;
+}
+
+
+
+message UserAccountTransferListRequest {
+  repeated UserAccountTransferPO userAccountTransferPO = 1;
+}
+
+message UserAccountReply {
+  repeated UserAccountTransferResponse userAccountTransferResponse = 1;
+}
+
+message UserAccountListReply{
+  repeated UserAccountList accountList=1;
+  string totalBalance=2;
+  string totalBalanceSymbol=3;
+}

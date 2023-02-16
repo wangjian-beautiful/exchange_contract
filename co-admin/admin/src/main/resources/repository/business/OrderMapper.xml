@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bijinsuo.business.repository.OrderMapper">
+
+    <resultMap type="com.bijinsuo.business.entity.Order" id="CoOrderResult">
+        <result property="id" column="id"/>
+        <result property="symbol" column="symbol"/>
+        <result property="triggerOrderId" column="trigger_order_id"/>
+        <result property="uid" column="uid"/>
+        <result property="positionType" column="position_type" typeHandler="com.bijinsuo.business.util.mybatis.typehandler.PositionTypeHandler"/>
+        <result property="operateType" column="operate_type" typeHandler="com.bijinsuo.business.util.mybatis.typehandler.OperateTypeHandler"/>
+        <result property="operateSide" column="operate_side" typeHandler="com.bijinsuo.business.util.mybatis.typehandler.OperateSideHandler"/>
+        <result property="leverageLevel" column="leverage_level"/>
+        <result property="price" column="price"/>
+        <result property="volumeBase" column="volume_base"/>
+        <result property="volumeQuote" column="volume_quote"/>
+        <result property="status" column="status" typeHandler="com.bijinsuo.business.util.mybatis.typehandler.OrderStatusHandler"/>
+        <result property="ip" column="ip"/>
+        <result property="source" column="source" typeHandler="com.bijinsuo.business.util.mybatis.typehandler.OrderSourceHandler"/>
+        <result property="dealBase" column="deal_base"/>
+        <result property="avgPrice" column="avg_price"/>
+        <result property="dealQuote" column="deal_quote"/>
+        <result property="ctime" column="ctime"/>
+    </resultMap>
+
+    <select id="selectOrderList" parameterType="com.bijinsuo.business.entity.Order" resultMap="CoOrderResult">
+        select id, symbol, trigger_order_id, uid, position_type, operate_type, operate_side, type, leverage_level, price,
+        volume_base, volume_quote, status, ip, source, deal_base, avg_price, deal_quote, ctime from co_order
+        <where>
+            <if test="symbol != null and symbol != ''">and symbol = #{symbol}</if>
+            <if test="uid != null ">and uid = #{uid}</if>
+            <if test="positionType != null ">and position_type = #{positionType, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.PositionTypeHandler}</if>
+            <if test="operateType != null  ">and operate_type = #{operateType, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.OperateTypeHandler}</if>
+            <if test="operateSide != null ">and operate_side = #{operateSide, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.OperateSideHandler}</if>
+            <if test="price != null ">and price = #{price}</if>
+            <if test="volumeBase != null ">and volume_base = #{volumeBase}</if>
+            <if test="volumeQuote != null ">and volume_quote = #{volumeQuote}</if>
+            <if test="status != null ">and status = #{status, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.OrderStatusHandler}</if>
+            <if test="ip != null  and ip != ''">and ip = #{ip}</if>
+            <if test="source != null ">and source = #{source, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.OrderSourceHandler}</if>
+            <if test="dealBase != null ">and deal_base = #{dealBase}</if>
+            <if test="avgPrice != null ">and avg_price = #{avgPrice}</if>
+            <if test="dealQuote != null ">and deal_quote = #{dealQuote}</if>
+            <if test="startTime != null"> and ctime >= #{startTime}</if>
+            <if test="endTime != null"> and ctime <![CDATA[ <= ]]> #{endTime}</if>
+        </where>
+    </select>
+
+
+</mapper>

@@ -1,0 +1,51 @@
+syntax = "proto3";
+import "FundingRatePO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.fundingRate";
+option java_outer_classname = "FundingRateBizServiceProto";
+
+package fundingRate;
+
+service FundingRateBizService {
+    rpc getById (FundingRateRequest) returns (FundingRatePO) {}
+    rpc selectListByIds (FundingRateIdsRequest) returns (FundingRateListReply) {}
+    rpc selectAll (FundingRatePageRequest) returns (FundingRateListReply) {}
+    rpc selectList (FundingRatePageRequest) returns (FundingRateListReply) {}
+    rpc insertOne (FundingRateRequest) returns (FundingRateReply) {}
+    rpc insertBatch (FundingRateListRequest) returns (FundingRateListReply) {}
+    rpc updateById (FundingRateRequest) returns (FundingRateReply) {}
+    rpc updateBatch (FundingRateListRequest) returns (FundingRateReply) {}
+    rpc removeById (FundingRateRequest) returns (FundingRateReply) {}
+    rpc removeAll (FundingRateIdsRequest) returns (FundingRateReply) {}
+}
+
+message FundingRateRequest {
+    int64 id = 1;
+    FundingRatePO fundingRatePO = 2;
+}
+
+message FundingRatePageRequest {
+    int32 page = 1;
+    int32 size = 2;
+    FundingRatePO fundingRatePO = 3;
+}
+
+message FundingRateListRequest {
+    repeated FundingRatePO fundingRatePO = 1;
+}
+
+message FundingRateIdsRequest {
+    repeated int64 id = 1;
+}
+
+message FundingRateReply {
+    bool status = 1;
+    string message = 2;
+    FundingRatePO fundingRatePO = 3;
+}
+
+message FundingRateListReply {
+    repeated FundingRatePO fundingRatePO = 1;
+    int64 total = 2;
+}

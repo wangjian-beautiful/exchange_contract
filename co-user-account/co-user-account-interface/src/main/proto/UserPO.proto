@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.user";
+option java_outer_classname = "UserPOProto";
+
+package user;
+
+message UserPO{
+        google.protobuf.Int64Value uid = 1;
+        string apiKey = 2;
+        google.protobuf.Int32Value tradable = 3;
+        google.protobuf.Int32Value transferable = 4;
+        google.protobuf.Int32Value delFlag = 5;
+        string createBy = 6;
+        google.protobuf.Timestamp createTime = 7;
+        string updateBy = 8;
+        google.protobuf.Timestamp updateTime = 9;
+}

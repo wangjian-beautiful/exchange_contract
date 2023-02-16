@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.contractConfig";
+option java_outer_classname = "ContractConfigPOProto";
+
+package contractConfig;
+
+message ContractConfigPO{
+        google.protobuf.Int64Value id = 1;
+        string symbol = 2;
+        string base = 3;
+        string quote = 4;
+        string contractName = 5;
+        string contractOtherName = 6;
+        string capitalIntervalMin = 7;
+        string capitalIntervalMax = 8;
+        string openMakerFeeRate = 9;
+        string openTakerFeeRate = 10;
+        string closeMakerFeeRate = 11;
+        string closeTakerFeeRate = 12;
+        string minMakerFee = 13;
+        string minTakerFee = 14;
+        google.protobuf.Int32Value riskAlarmWeak = 15;
+        google.protobuf.Int32Value riskAlarmMiddle = 16;
+        google.protobuf.Int32Value riskAlarmStrong = 17;
+        string priceLimitRate = 18;
+        google.protobuf.Int32Value status = 19;
+        google.protobuf.Int32Value show = 20;
+        google.protobuf.Timestamp ctime = 21;
+        google.protobuf.Timestamp mtime = 22;
+        string minOpenBase = 23;
+        string maxOpenBase = 24;
+        string minOpenQuote = 25;
+        string maxOpenQuote = 26;
+        google.protobuf.Int32Value basePrecision = 27;
+        google.protobuf.Int32Value quotePrecision = 28;
+        google.protobuf.Int32Value pricePrecision = 29;
+}

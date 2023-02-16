@@ -1,0 +1,688 @@
+2023-1月-11 17:46:45.697 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='db-dev.yaml,redis-dev.yaml,mongo-dev.yaml,co-config-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-11 17:46:45.954 INFO   main org.apache.dubbo.spring.boot.context.event.WelcomeLogoApplicationListener 
+
+ :: Dubbo Spring Boot (v3.0.9) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v3.0.9) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+2023-1月-11 17:46:46.043 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='db-dev.yaml,redis-dev.yaml,mongo-dev.yaml,co-config-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-11 17:46:46.050 INFO   main com.bjs.contract.CoConfigApplication Starting CoConfigApplication on DESKTOP-7BNER8S with PID 8928 (D:\workspace\git\gcex-contract\co-config\co-config-provider\out\production\classes started by WJ in D:\workspace\git\gcex-contract)
+2023-1月-11 17:46:46.051 INFO   main com.bjs.contract.CoConfigApplication The following profiles are active: dev
+2023-1月-11 17:46:48.588 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-1月-11 17:46:48.592 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-1月-11 17:46:48.649 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 40ms. Found 0 Redis repository interfaces.
+2023-1月-11 17:46:49.459 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+2023-1月-11 17:46:50.057 INFO   main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 16001 (http)
+2023-1月-11 17:46:50.069 INFO   main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-16001"]
+2023-1月-11 17:46:50.069 INFO   main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-1月-11 17:46:50.069 INFO   main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.36]
+2023-1月-11 17:46:50.177 INFO   main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2023-1月-11 17:46:50.177 INFO   main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 4054 ms
+2023-1月-11 17:46:50.547 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer loading dubbo config beans ...
+2023-1月-11 17:46:50.563 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer dubbo config beans are loaded.
+2023-1月-11 17:46:50.664 INFO   main com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-1月-11 17:46:50.664 INFO   main com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-1月-11 17:47:00.811 INFO   main com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-1月-11 17:47:00.811 INFO   main com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-1月-11 17:47:13.930 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService
+2023-1月-11 17:47:14.144 INFO   main org.redisson.Version Redisson 3.16.3
+2023-1月-11 17:47:17.584 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7001
+2023-1月-11 17:47:20.558 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7002
+2023-1月-11 17:47:23.514 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7003
+2023-1月-11 17:47:26.445 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7004
+2023-1月-11 17:47:29.376 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7005
+2023-1月-11 17:47:32.310 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7006
+2023-1月-11 17:47:34.344 WARN   main org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in com.bijinsuo.common.redis.config.RedisConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+2023-1月-11 17:47:34.344 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService
+2023-1月-11 17:47:34.346 INFO   main com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor class com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor was destroying!
+2023-1月-11 17:47:34.346 INFO   main com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor class com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor was destroying!
+2023-1月-11 17:47:34.348 INFO   main org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-1月-11 17:47:34.358 INFO   main org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-1月-11 17:47:34.360 ERROR  main org.springframework.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in com.bijinsuo.common.redis.config.RedisConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:893)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.bjs.contract.CoConfigApplication.main(CoConfigApplication.java:18)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650)
+	... 20 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.redisson.cluster.ClusterConnectionManager.<init>(ClusterConnectionManager.java:151)
+	at org.redisson.config.ConfigSupport.createConnectionManager(ConfigSupport.java:196)
+	at org.redisson.Redisson.<init>(Redisson.java:67)
+	at org.redisson.Redisson.create(Redisson.java:108)
+	at com.bijinsuo.common.redis.config.RedisConfig.redissonClient(RedisConfig.java:229)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$c3ae2513.CGLIB$redissonClient$1(<generated>)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$c3ae2513$$FastClassBySpringCGLIB$$ac72a207.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$c3ae2513.redissonClient(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 21 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: 10.16.64.18/10.16.64.18:7006
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-1月-11 17:47:35.358 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Start destroying common HttpClient
+2023-1月-11 17:47:35.358 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Start destroying Publisher
+2023-1月-11 17:47:35.358 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Destruction of the end
+2023-1月-11 17:47:35.362 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Destruction of the end
+2023-1月-12 14:58:29.163 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='db-dev.yaml,redis-dev.yaml,mongo-dev.yaml,co-config-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-12 14:58:29.410 INFO   main org.apache.dubbo.spring.boot.context.event.WelcomeLogoApplicationListener 
+
+ :: Dubbo Spring Boot (v3.0.9) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v3.0.9) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+2023-1月-12 14:58:29.538 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='db-dev.yaml,redis-dev.yaml,mongo-dev.yaml,co-config-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-12 14:58:29.545 INFO   main com.bjs.contract.CoConfigApplication Starting CoConfigApplication on DESKTOP-7BNER8S with PID 20856 (D:\workspace\git\gcex-contract\co-config\co-config-provider\out\production\classes started by WJ in D:\workspace\git\gcex-contract)
+2023-1月-12 14:58:29.545 INFO   main com.bjs.contract.CoConfigApplication The following profiles are active: dev
+2023-1月-12 14:58:32.534 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-1月-12 14:58:32.546 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-1月-12 14:58:32.728 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 62ms. Found 0 Redis repository interfaces.
+2023-1月-12 14:58:34.131 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+2023-1月-12 14:58:35.421 INFO   main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 16001 (http)
+2023-1月-12 14:58:35.442 INFO   main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-16001"]
+2023-1月-12 14:58:35.442 INFO   main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-1月-12 14:58:35.442 INFO   main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.36]
+2023-1月-12 14:58:35.614 INFO   main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2023-1月-12 14:58:35.614 INFO   main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 5979 ms
+2023-1月-12 14:58:36.071 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer loading dubbo config beans ...
+2023-1月-12 14:58:36.079 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer dubbo config beans are loaded.
+2023-1月-12 14:58:36.229 INFO   main com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-1月-12 14:58:36.229 INFO   main com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-1月-12 14:58:46.153 INFO   main com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-1月-12 14:58:46.153 INFO   main com.alibaba.nacos.plugin.auth.spi.client.ClientAuthPluginManager [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-1月-12 14:58:59.568 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService
+2023-1月-12 14:58:59.951 INFO   main org.redisson.Version Redisson 3.16.3
+2023-1月-12 14:59:03.755 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7001
+2023-1月-12 14:59:06.769 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7002
+2023-1月-12 14:59:09.803 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7003
+2023-1月-12 14:59:13.149 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7004
+2023-1月-12 14:59:16.429 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7005
+2023-1月-12 14:59:20.131 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7006
+2023-1月-12 14:59:22.154 WARN   main org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in com.bijinsuo.common.redis.config.RedisConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+2023-1月-12 14:59:22.155 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService
+2023-1月-12 14:59:22.156 INFO   main com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor class com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor was destroying!
+2023-1月-12 14:59:22.156 INFO   main com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor class com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor was destroying!
+2023-1月-12 14:59:22.158 INFO   main org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-1月-12 14:59:22.170 INFO   main org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-1月-12 14:59:22.172 ERROR  main org.springframework.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in com.bijinsuo.common.redis.config.RedisConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:893)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.bjs.contract.CoConfigApplication.main(CoConfigApplication.java:18)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650)
+	... 20 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.redisson.cluster.ClusterConnectionManager.<init>(ClusterConnectionManager.java:151)
+	at org.redisson.config.ConfigSupport.createConnectionManager(ConfigSupport.java:196)
+	at org.redisson.Redisson.<init>(Redisson.java:67)
+	at org.redisson.Redisson.create(Redisson.java:108)
+	at com.bijinsuo.common.redis.config.RedisConfig.redissonClient(RedisConfig.java:229)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$96e78684.CGLIB$redissonClient$4(<generated>)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$96e78684$$FastClassBySpringCGLIB$$4481df57.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$96e78684.redissonClient(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 21 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: 10.16.64.18/10.16.64.18:7006
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-1月-12 14:59:23.168 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Start destroying Publisher
+2023-1月-12 14:59:23.168 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Start destroying common HttpClient
+2023-1月-12 14:59:23.168 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Destruction of the end
+2023-1月-12 14:59:23.169 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Destruction of the end
+2023-1月-12 15:34:40.753 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='redis-dev.yaml,rocketmq-dev.yaml,co-app-api-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-12 15:34:40.982 INFO   main org.apache.dubbo.spring.boot.context.event.WelcomeLogoApplicationListener 
+
+ :: Dubbo Spring Boot (v3.0.9) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v3.0.9) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+2023-1月-12 15:34:41.065 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='redis-dev.yaml,rocketmq-dev.yaml,co-app-api-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-12 15:34:41.071 INFO   main com.bjs.contract.CoAppApiApplication Starting CoAppApiApplication on DESKTOP-7BNER8S with PID 15376 (D:\workspace\git\gcex-contract\co-app-api\out\production\classes started by WJ in D:\workspace\git\gcex-contract)
+2023-1月-12 15:34:41.071 INFO   main com.bjs.contract.CoAppApiApplication The following profiles are active: dev
+2023-1月-12 15:34:45.836 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-1月-12 15:34:45.839 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-1月-12 15:34:45.933 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 81ms. Found 0 Redis repository interfaces.
+2023-1月-12 15:34:46.233 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: accountBizService = ReferenceBean:com.bjs.contract.proto.account.AccountBizService() at private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.AccountAction.accountBizService
+2023-1月-12 15:34:46.243 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coOrderBizService = ReferenceBean:com.bjs.contract.proto.coOrder.CoOrderBizService() at private com.bjs.contract.proto.coOrder.CoOrderBizService com.bjs.contract.action.CoOrderAction.coOrderBizService
+2023-1月-12 15:34:46.243 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coTriggerOrderBizService = ReferenceBean:com.bjs.contract.proto.coTriggerOrder.CoTriggerOrderBizService() at private com.bjs.contract.proto.coTriggerOrder.CoTriggerOrderBizService com.bjs.contract.action.CoOrderAction.coTriggerOrderBizService
+2023-1月-12 15:34:46.243 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: contractConfigBizService = ReferenceBean:com.bjs.contract.proto.contractConfig.ContractConfigBizService() at private com.bjs.contract.proto.contractConfig.ContractConfigBizService com.bjs.contract.action.CoOrderAction.contractConfigBizService
+2023-1月-12 15:34:46.243 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: settlementBizService = ReferenceBean:com.bjs.contract.proto.settlement.SettlementBizService() at private com.bjs.contract.proto.settlement.SettlementBizService com.bjs.contract.action.CoOrderAction.settlementBizService
+2023-1月-12 15:34:46.247 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coTradeBizService = ReferenceBean:com.bjs.contract.proto.coTrade.CoTradeBizService() at private com.bjs.contract.proto.coTrade.CoTradeBizService com.bjs.contract.action.CoOrderTradeAction.coTradeBizService
+2023-1月-12 15:34:46.250 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coPositionOrderBizService = ReferenceBean:com.bjs.contract.proto.coPositionOrder.CoPositionOrderBizService() at private com.bjs.contract.proto.coPositionOrder.CoPositionOrderBizService com.bjs.contract.action.CoPositionOrderAction.coPositionOrderBizService
+2023-1月-12 15:34:46.259 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: configSymbolMatchingBizService = ReferenceBean:com.bjs.contract.proto.configSymbolMatching.ConfigSymbolMatchingBizService() at private com.bjs.contract.proto.configSymbolMatching.ConfigSymbolMatchingBizService com.bjs.contract.action.ConfigSymbolMatchingAction.configSymbolMatchingBizService
+2023-1月-12 15:34:46.263 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: maintenanceMarginRateBizService = ReferenceBean:com.bjs.contract.proto.maintenanceMarginRate.MaintenanceMarginRateBizService() at com.bjs.contract.proto.maintenanceMarginRate.MaintenanceMarginRateBizService com.bjs.contract.action.MaintenanceMarginRateAction.maintenanceMarginRateBizService
+2023-1月-12 15:34:46.274 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: transactionBizService = ReferenceBean:com.bjs.contract.proto.transaction.TransactionBizService(filter=[SetTokenFilter]) at private com.bjs.contract.proto.transaction.TransactionBizService com.bjs.contract.action.TransactionAction.transactionBizService
+2023-1月-12 15:34:46.275 WARN   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Already exists another bean definition with the same bean name [accountBizService], rename dubbo reference bean to [accountBizService#2]. It is recommended to modify the name of one of the beans to avoid injection problems. prev: accountBizService[ReferenceBean:com.bjs.contract.proto.account.AccountBizService()], new: accountBizService#2[ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter])]. Please check private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:34:46.275 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: accountBizService#2 = ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter]) at private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:34:46.278 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: userBizService = ReferenceBean:com.bjs.contract.proto.user.UserBizService() at private com.bjs.contract.proto.user.UserBizService com.bjs.contract.action.UserAction.userBizService
+2023-1月-12 15:34:46.283 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: userLeverageBizService = ReferenceBean:com.bjs.contract.proto.userLeverage.UserLeverageBizService() at private com.bjs.contract.proto.userLeverage.UserLeverageBizService com.bjs.contract.action.UserLeverageAction.userLeverageBizService
+2023-1月-12 15:34:46.691 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+2023-1月-12 15:34:47.460 INFO   main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+2023-1月-12 15:34:47.473 INFO   main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+2023-1月-12 15:34:47.474 INFO   main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-1月-12 15:34:47.474 INFO   main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.36]
+2023-1月-12 15:34:47.605 INFO   main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2023-1月-12 15:34:47.605 INFO   main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 6492 ms
+2023-1月-12 15:34:47.991 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer loading dubbo config beans ...
+2023-1月-12 15:34:47.998 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer dubbo config beans are loaded.
+2023-1月-12 15:34:48.283 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.334 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.355 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.374 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.392 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.413 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.430 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.460 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.479 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.510 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.532 WARN   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Already exists another bean definition with the same bean name [accountBizService], rename dubbo reference bean to [accountBizService#3]. It is recommended to modify the name of one of the beans to avoid injection problems. prev: accountBizService[ReferenceBean:com.bjs.contract.proto.account.AccountBizService()], new: accountBizService#3[ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter])]. Please check private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:34:48.535 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.540 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.562 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:34:48.587 WARN   main org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'swaggerConfig': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'swagger.enable' in value "${swagger.enable}"
+2023-1月-12 15:34:48.588 INFO   main com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor class com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor was destroying!
+2023-1月-12 15:34:48.588 INFO   main com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor class com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor was destroying!
+2023-1月-12 15:34:48.590 INFO   main org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-1月-12 15:34:48.609 INFO   main org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-1月-12 15:34:48.611 ERROR  main org.springframework.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'swaggerConfig': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'swagger.enable' in value "${swagger.enable}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:893)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.bjs.contract.CoAppApiApplication.main(CoAppApiApplication.java:18)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'swagger.enable' in value "${swagger.enable}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:912)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1245)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1224)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 18 common frames omitted
+2023-1月-12 15:34:48.613 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Start destroying Publisher
+2023-1月-12 15:34:48.613 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Start destroying common HttpClient
+2023-1月-12 15:34:48.613 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Destruction of the end
+2023-1月-12 15:34:48.614 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Destruction of the end
+2023-1月-12 15:36:06.580 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='redis-dev.yaml,rocketmq-dev.yaml,co-app-api-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-12 15:36:06.814 INFO   main org.apache.dubbo.spring.boot.context.event.WelcomeLogoApplicationListener 
+
+ :: Dubbo Spring Boot (v3.0.9) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v3.0.9) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+2023-1月-12 15:36:06.900 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='redis-dev.yaml,rocketmq-dev.yaml,co-app-api-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-12 15:36:06.907 INFO   main com.bjs.contract.CoAppApiApplication Starting CoAppApiApplication on DESKTOP-7BNER8S with PID 28560 (D:\workspace\git\gcex-contract\co-app-api\out\production\classes started by WJ in D:\workspace\git\gcex-contract)
+2023-1月-12 15:36:06.907 INFO   main com.bjs.contract.CoAppApiApplication The following profiles are active: dev
+2023-1月-12 15:36:08.603 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-1月-12 15:36:08.606 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-1月-12 15:36:08.679 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 60ms. Found 0 Redis repository interfaces.
+2023-1月-12 15:36:09.025 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: accountBizService = ReferenceBean:com.bjs.contract.proto.account.AccountBizService() at private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.AccountAction.accountBizService
+2023-1月-12 15:36:09.038 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coOrderBizService = ReferenceBean:com.bjs.contract.proto.coOrder.CoOrderBizService() at private com.bjs.contract.proto.coOrder.CoOrderBizService com.bjs.contract.action.CoOrderAction.coOrderBizService
+2023-1月-12 15:36:09.038 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coTriggerOrderBizService = ReferenceBean:com.bjs.contract.proto.coTriggerOrder.CoTriggerOrderBizService() at private com.bjs.contract.proto.coTriggerOrder.CoTriggerOrderBizService com.bjs.contract.action.CoOrderAction.coTriggerOrderBizService
+2023-1月-12 15:36:09.038 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: contractConfigBizService = ReferenceBean:com.bjs.contract.proto.contractConfig.ContractConfigBizService() at private com.bjs.contract.proto.contractConfig.ContractConfigBizService com.bjs.contract.action.CoOrderAction.contractConfigBizService
+2023-1月-12 15:36:09.038 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: settlementBizService = ReferenceBean:com.bjs.contract.proto.settlement.SettlementBizService() at private com.bjs.contract.proto.settlement.SettlementBizService com.bjs.contract.action.CoOrderAction.settlementBizService
+2023-1月-12 15:36:09.043 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coTradeBizService = ReferenceBean:com.bjs.contract.proto.coTrade.CoTradeBizService() at private com.bjs.contract.proto.coTrade.CoTradeBizService com.bjs.contract.action.CoOrderTradeAction.coTradeBizService
+2023-1月-12 15:36:09.046 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coPositionOrderBizService = ReferenceBean:com.bjs.contract.proto.coPositionOrder.CoPositionOrderBizService() at private com.bjs.contract.proto.coPositionOrder.CoPositionOrderBizService com.bjs.contract.action.CoPositionOrderAction.coPositionOrderBizService
+2023-1月-12 15:36:09.055 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: configSymbolMatchingBizService = ReferenceBean:com.bjs.contract.proto.configSymbolMatching.ConfigSymbolMatchingBizService() at private com.bjs.contract.proto.configSymbolMatching.ConfigSymbolMatchingBizService com.bjs.contract.action.ConfigSymbolMatchingAction.configSymbolMatchingBizService
+2023-1月-12 15:36:09.060 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: maintenanceMarginRateBizService = ReferenceBean:com.bjs.contract.proto.maintenanceMarginRate.MaintenanceMarginRateBizService() at com.bjs.contract.proto.maintenanceMarginRate.MaintenanceMarginRateBizService com.bjs.contract.action.MaintenanceMarginRateAction.maintenanceMarginRateBizService
+2023-1月-12 15:36:09.071 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: transactionBizService = ReferenceBean:com.bjs.contract.proto.transaction.TransactionBizService(filter=[SetTokenFilter]) at private com.bjs.contract.proto.transaction.TransactionBizService com.bjs.contract.action.TransactionAction.transactionBizService
+2023-1月-12 15:36:09.072 WARN   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Already exists another bean definition with the same bean name [accountBizService], rename dubbo reference bean to [accountBizService#2]. It is recommended to modify the name of one of the beans to avoid injection problems. prev: accountBizService[ReferenceBean:com.bjs.contract.proto.account.AccountBizService()], new: accountBizService#2[ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter])]. Please check private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:36:09.072 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: accountBizService#2 = ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter]) at private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:36:09.074 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: userBizService = ReferenceBean:com.bjs.contract.proto.user.UserBizService() at private com.bjs.contract.proto.user.UserBizService com.bjs.contract.action.UserAction.userBizService
+2023-1月-12 15:36:09.077 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: userLeverageBizService = ReferenceBean:com.bjs.contract.proto.userLeverage.UserLeverageBizService() at private com.bjs.contract.proto.userLeverage.UserLeverageBizService com.bjs.contract.action.UserLeverageAction.userLeverageBizService
+2023-1月-12 15:36:09.631 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+2023-1月-12 15:36:10.470 INFO   main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+2023-1月-12 15:36:10.483 INFO   main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+2023-1月-12 15:36:10.483 INFO   main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-1月-12 15:36:10.483 INFO   main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.36]
+2023-1月-12 15:36:10.634 INFO   main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2023-1月-12 15:36:10.634 INFO   main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 3680 ms
+2023-1月-12 15:36:11.102 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer loading dubbo config beans ...
+2023-1月-12 15:36:11.112 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer dubbo config beans are loaded.
+2023-1月-12 15:36:11.462 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.512 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.540 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.580 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.605 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.635 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.659 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.697 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.727 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.773 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.797 WARN   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Already exists another bean definition with the same bean name [accountBizService], rename dubbo reference bean to [accountBizService#3]. It is recommended to modify the name of one of the beans to avoid injection problems. prev: accountBizService[ReferenceBean:com.bjs.contract.proto.account.AccountBizService()], new: accountBizService#3[ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter])]. Please check private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:36:11.800 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.806 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:11.831 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:36:24.226 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService
+2023-1月-12 15:36:24.974 INFO   main org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-1月-12 15:36:25.466 INFO   main org.redisson.Version Redisson 3.16.3
+2023-1月-12 15:36:29.083 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7001
+2023-1月-12 15:36:32.179 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7002
+2023-1月-12 15:36:35.198 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7003
+2023-1月-12 15:36:38.243 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7004
+2023-1月-12 15:36:41.384 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7005
+2023-1月-12 15:36:44.573 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7006
+2023-1月-12 15:36:46.602 WARN   main org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/bijinsuo/common/redis/config/RedisConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+2023-1月-12 15:36:46.604 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService
+2023-1月-12 15:36:46.605 INFO   main com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor class com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor was destroying!
+2023-1月-12 15:36:46.605 INFO   main com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor class com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor was destroying!
+2023-1月-12 15:36:46.608 INFO   main org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-1月-12 15:36:46.626 INFO   main org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-1月-12 15:36:46.628 ERROR  main org.springframework.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/bijinsuo/common/redis/config/RedisConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:893)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.bjs.contract.CoAppApiApplication.main(CoAppApiApplication.java:18)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650)
+	... 20 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.redisson.cluster.ClusterConnectionManager.<init>(ClusterConnectionManager.java:151)
+	at org.redisson.config.ConfigSupport.createConnectionManager(ConfigSupport.java:196)
+	at org.redisson.Redisson.<init>(Redisson.java:67)
+	at org.redisson.Redisson.create(Redisson.java:108)
+	at com.bijinsuo.common.redis.config.RedisConfig.redissonClient(RedisConfig.java:229)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$de8896a9.CGLIB$redissonClient$0(<generated>)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$de8896a9$$FastClassBySpringCGLIB$$20ddc6a4.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$de8896a9.redissonClient(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 21 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: 10.16.64.18/10.16.64.18:7006
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-1月-12 15:36:47.607 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Start destroying Publisher
+2023-1月-12 15:36:47.607 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Destruction of the end
+2023-1月-12 15:36:47.607 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Start destroying common HttpClient
+2023-1月-12 15:36:47.609 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Destruction of the end
+2023-1月-12 15:37:33.619 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='redis-dev.yaml,rocketmq-dev.yaml,co-app-api-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-12 15:37:33.853 INFO   main org.apache.dubbo.spring.boot.context.event.WelcomeLogoApplicationListener 
+
+ :: Dubbo Spring Boot (v3.0.9) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v3.0.9) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+2023-1月-12 15:37:33.934 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='redis-dev.yaml,rocketmq-dev.yaml,co-app-api-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-12 15:37:33.940 INFO   main com.bjs.contract.CoAppApiApplication Starting CoAppApiApplication on DESKTOP-7BNER8S with PID 10780 (D:\workspace\git\gcex-contract\co-app-api\out\production\classes started by WJ in D:\workspace\git\gcex-contract)
+2023-1月-12 15:37:33.940 INFO   main com.bjs.contract.CoAppApiApplication The following profiles are active: dev
+2023-1月-12 15:37:35.598 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-1月-12 15:37:35.601 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-1月-12 15:37:35.693 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 78ms. Found 0 Redis repository interfaces.
+2023-1月-12 15:37:36.002 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: accountBizService = ReferenceBean:com.bjs.contract.proto.account.AccountBizService() at private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.AccountAction.accountBizService
+2023-1月-12 15:37:36.010 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coOrderBizService = ReferenceBean:com.bjs.contract.proto.coOrder.CoOrderBizService() at private com.bjs.contract.proto.coOrder.CoOrderBizService com.bjs.contract.action.CoOrderAction.coOrderBizService
+2023-1月-12 15:37:36.010 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coTriggerOrderBizService = ReferenceBean:com.bjs.contract.proto.coTriggerOrder.CoTriggerOrderBizService() at private com.bjs.contract.proto.coTriggerOrder.CoTriggerOrderBizService com.bjs.contract.action.CoOrderAction.coTriggerOrderBizService
+2023-1月-12 15:37:36.010 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: contractConfigBizService = ReferenceBean:com.bjs.contract.proto.contractConfig.ContractConfigBizService() at private com.bjs.contract.proto.contractConfig.ContractConfigBizService com.bjs.contract.action.CoOrderAction.contractConfigBizService
+2023-1月-12 15:37:36.010 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: settlementBizService = ReferenceBean:com.bjs.contract.proto.settlement.SettlementBizService() at private com.bjs.contract.proto.settlement.SettlementBizService com.bjs.contract.action.CoOrderAction.settlementBizService
+2023-1月-12 15:37:36.015 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coTradeBizService = ReferenceBean:com.bjs.contract.proto.coTrade.CoTradeBizService() at private com.bjs.contract.proto.coTrade.CoTradeBizService com.bjs.contract.action.CoOrderTradeAction.coTradeBizService
+2023-1月-12 15:37:36.018 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coPositionOrderBizService = ReferenceBean:com.bjs.contract.proto.coPositionOrder.CoPositionOrderBizService() at private com.bjs.contract.proto.coPositionOrder.CoPositionOrderBizService com.bjs.contract.action.CoPositionOrderAction.coPositionOrderBizService
+2023-1月-12 15:37:36.025 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: configSymbolMatchingBizService = ReferenceBean:com.bjs.contract.proto.configSymbolMatching.ConfigSymbolMatchingBizService() at private com.bjs.contract.proto.configSymbolMatching.ConfigSymbolMatchingBizService com.bjs.contract.action.ConfigSymbolMatchingAction.configSymbolMatchingBizService
+2023-1月-12 15:37:36.029 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: maintenanceMarginRateBizService = ReferenceBean:com.bjs.contract.proto.maintenanceMarginRate.MaintenanceMarginRateBizService() at com.bjs.contract.proto.maintenanceMarginRate.MaintenanceMarginRateBizService com.bjs.contract.action.MaintenanceMarginRateAction.maintenanceMarginRateBizService
+2023-1月-12 15:37:36.039 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: transactionBizService = ReferenceBean:com.bjs.contract.proto.transaction.TransactionBizService(filter=[SetTokenFilter]) at private com.bjs.contract.proto.transaction.TransactionBizService com.bjs.contract.action.TransactionAction.transactionBizService
+2023-1月-12 15:37:36.040 WARN   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Already exists another bean definition with the same bean name [accountBizService], rename dubbo reference bean to [accountBizService#2]. It is recommended to modify the name of one of the beans to avoid injection problems. prev: accountBizService[ReferenceBean:com.bjs.contract.proto.account.AccountBizService()], new: accountBizService#2[ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter])]. Please check private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:37:36.040 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: accountBizService#2 = ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter]) at private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:37:36.043 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: userBizService = ReferenceBean:com.bjs.contract.proto.user.UserBizService() at private com.bjs.contract.proto.user.UserBizService com.bjs.contract.action.UserAction.userBizService
+2023-1月-12 15:37:36.045 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: userLeverageBizService = ReferenceBean:com.bjs.contract.proto.userLeverage.UserLeverageBizService() at private com.bjs.contract.proto.userLeverage.UserLeverageBizService com.bjs.contract.action.UserLeverageAction.userLeverageBizService
+2023-1月-12 15:37:36.488 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+2023-1月-12 15:37:37.198 INFO   main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+2023-1月-12 15:37:37.209 INFO   main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+2023-1月-12 15:37:37.209 INFO   main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-1月-12 15:37:37.210 INFO   main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.36]
+2023-1月-12 15:37:37.331 INFO   main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2023-1月-12 15:37:37.331 INFO   main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 3349 ms
+2023-1月-12 15:37:37.706 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer loading dubbo config beans ...
+2023-1月-12 15:37:37.714 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer dubbo config beans are loaded.
+2023-1月-12 15:37:37.993 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.038 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.059 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.079 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.095 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.113 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.129 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.152 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.174 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.203 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.224 WARN   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Already exists another bean definition with the same bean name [accountBizService], rename dubbo reference bean to [accountBizService#3]. It is recommended to modify the name of one of the beans to avoid injection problems. prev: accountBizService[ReferenceBean:com.bjs.contract.proto.account.AccountBizService()], new: accountBizService#3[ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter])]. Please check private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:37:38.227 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.231 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:38.249 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:37:50.558 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService
+2023-1月-12 15:37:51.223 INFO   main org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-1月-12 15:37:51.642 INFO   main org.redisson.Version Redisson 3.16.3
+2023-1月-12 15:37:55.112 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7001
+2023-1月-12 15:37:58.123 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7002
+2023-1月-12 15:38:01.170 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7003
+2023-1月-12 15:38:04.218 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7004
+2023-1月-12 15:38:07.234 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7005
+2023-1月-12 15:38:10.261 WARN   main org.redisson.cluster.ClusterConnectionManager Connection refused: no further information: 10.16.64.18/10.16.64.18:7006
+2023-1月-12 15:38:12.281 WARN   main org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/bijinsuo/common/redis/config/RedisConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+2023-1月-12 15:38:12.283 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService
+2023-1月-12 15:38:12.284 INFO   main com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor class com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor was destroying!
+2023-1月-12 15:38:12.284 INFO   main com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor class com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor was destroying!
+2023-1月-12 15:38:12.287 INFO   main org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-1月-12 15:38:12.303 INFO   main org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-1月-12 15:38:12.304 ERROR  main org.springframework.boot.SpringApplication Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/bijinsuo/common/redis/config/RedisConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:893)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.bjs.contract.CoAppApiApplication.main(CoAppApiApplication.java:18)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650)
+	... 20 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: Can't connect to servers!
+	at org.redisson.cluster.ClusterConnectionManager.<init>(ClusterConnectionManager.java:151)
+	at org.redisson.config.ConfigSupport.createConnectionManager(ConfigSupport.java:196)
+	at org.redisson.Redisson.<init>(Redisson.java:67)
+	at org.redisson.Redisson.create(Redisson.java:108)
+	at com.bijinsuo.common.redis.config.RedisConfig.redissonClient(RedisConfig.java:229)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$d941a5b1.CGLIB$redissonClient$1(<generated>)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$d941a5b1$$FastClassBySpringCGLIB$$227bba3.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.bijinsuo.common.redis.config.RedisConfig$$EnhancerBySpringCGLIB$$d941a5b1.redissonClient(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 21 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: 10.16.64.18/10.16.64.18:7006
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-1月-12 15:38:13.283 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Start destroying common HttpClient
+2023-1月-12 15:38:13.284 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Start destroying Publisher
+2023-1月-12 15:38:13.284 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Destruction of the end
+2023-1月-12 15:38:13.287 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Destruction of the end
+2023-1月-12 15:39:15.470 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='redis-dev.yaml,rocketmq-dev.yaml,co-app-api-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-12 15:39:15.703 INFO   main org.apache.dubbo.spring.boot.context.event.WelcomeLogoApplicationListener 
+
+ :: Dubbo Spring Boot (v3.0.9) : https://github.com/apache/dubbo-spring-boot-project
+ :: Dubbo (v3.0.9) : https://github.com/apache/dubbo
+ :: Discuss group : dev@dubbo.apache.org
+
+2023-1月-12 15:39:15.800 INFO   main com.alibaba.boot.nacos.config.util.NacosConfigPropertiesUtils nacosConfigProperties : NacosConfigProperties{serverAddr='10.16.64.18:8848', contextPath='null', encode='null', endpoint='null', namespace='811fbb06-1d3e-4c05-abc9-3aeaec93290b', accessKey='null', secretKey='null', ramRoleName='null', autoRefresh=false, dataId='null', dataIds='redis-dev.yaml,rocketmq-dev.yaml,co-app-api-dev.yaml', group='dev', type=YAML, maxRetry='null', configLongPollTimeout='null', configRetryTime='null', enableRemoteSyncConfig=false, extConfig=[], bootstrap=Bootstrap{enable=true, logEnable=true}}
+2023-1月-12 15:39:15.806 INFO   main com.bjs.contract.CoAppApiApplication Starting CoAppApiApplication on DESKTOP-7BNER8S with PID 604 (D:\workspace\git\gcex-contract\co-app-api\out\production\classes started by WJ in D:\workspace\git\gcex-contract)
+2023-1月-12 15:39:15.806 INFO   main com.bjs.contract.CoAppApiApplication The following profiles are active: dev
+2023-1月-12 15:39:17.583 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-1月-12 15:39:17.587 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-1月-12 15:39:17.682 INFO   main org.springframework.data.repository.config.RepositoryConfigurationDelegate Finished Spring Data repository scanning in 81ms. Found 0 Redis repository interfaces.
+2023-1月-12 15:39:18.040 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: accountBizService = ReferenceBean:com.bjs.contract.proto.account.AccountBizService() at private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.AccountAction.accountBizService
+2023-1月-12 15:39:18.049 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coOrderBizService = ReferenceBean:com.bjs.contract.proto.coOrder.CoOrderBizService() at private com.bjs.contract.proto.coOrder.CoOrderBizService com.bjs.contract.action.CoOrderAction.coOrderBizService
+2023-1月-12 15:39:18.049 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coTriggerOrderBizService = ReferenceBean:com.bjs.contract.proto.coTriggerOrder.CoTriggerOrderBizService() at private com.bjs.contract.proto.coTriggerOrder.CoTriggerOrderBizService com.bjs.contract.action.CoOrderAction.coTriggerOrderBizService
+2023-1月-12 15:39:18.049 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: contractConfigBizService = ReferenceBean:com.bjs.contract.proto.contractConfig.ContractConfigBizService() at private com.bjs.contract.proto.contractConfig.ContractConfigBizService com.bjs.contract.action.CoOrderAction.contractConfigBizService
+2023-1月-12 15:39:18.049 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: settlementBizService = ReferenceBean:com.bjs.contract.proto.settlement.SettlementBizService() at private com.bjs.contract.proto.settlement.SettlementBizService com.bjs.contract.action.CoOrderAction.settlementBizService
+2023-1月-12 15:39:18.054 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coTradeBizService = ReferenceBean:com.bjs.contract.proto.coTrade.CoTradeBizService() at private com.bjs.contract.proto.coTrade.CoTradeBizService com.bjs.contract.action.CoOrderTradeAction.coTradeBizService
+2023-1月-12 15:39:18.058 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: coPositionOrderBizService = ReferenceBean:com.bjs.contract.proto.coPositionOrder.CoPositionOrderBizService() at private com.bjs.contract.proto.coPositionOrder.CoPositionOrderBizService com.bjs.contract.action.CoPositionOrderAction.coPositionOrderBizService
+2023-1月-12 15:39:18.068 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: configSymbolMatchingBizService = ReferenceBean:com.bjs.contract.proto.configSymbolMatching.ConfigSymbolMatchingBizService() at private com.bjs.contract.proto.configSymbolMatching.ConfigSymbolMatchingBizService com.bjs.contract.action.ConfigSymbolMatchingAction.configSymbolMatchingBizService
+2023-1月-12 15:39:18.073 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: maintenanceMarginRateBizService = ReferenceBean:com.bjs.contract.proto.maintenanceMarginRate.MaintenanceMarginRateBizService() at com.bjs.contract.proto.maintenanceMarginRate.MaintenanceMarginRateBizService com.bjs.contract.action.MaintenanceMarginRateAction.maintenanceMarginRateBizService
+2023-1月-12 15:39:18.083 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: transactionBizService = ReferenceBean:com.bjs.contract.proto.transaction.TransactionBizService(filter=[SetTokenFilter]) at private com.bjs.contract.proto.transaction.TransactionBizService com.bjs.contract.action.TransactionAction.transactionBizService
+2023-1月-12 15:39:18.085 WARN   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Already exists another bean definition with the same bean name [accountBizService], rename dubbo reference bean to [accountBizService#2]. It is recommended to modify the name of one of the beans to avoid injection problems. prev: accountBizService[ReferenceBean:com.bjs.contract.proto.account.AccountBizService()], new: accountBizService#2[ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter])]. Please check private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:39:18.085 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: accountBizService#2 = ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter]) at private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:39:18.087 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: userBizService = ReferenceBean:com.bjs.contract.proto.user.UserBizService() at private com.bjs.contract.proto.user.UserBizService com.bjs.contract.action.UserAction.userBizService
+2023-1月-12 15:39:18.090 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Register dubbo reference bean: userLeverageBizService = ReferenceBean:com.bjs.contract.proto.userLeverage.UserLeverageBizService() at private com.bjs.contract.proto.userLeverage.UserLeverageBizService com.bjs.contract.action.UserLeverageAction.userLeverageBizService
+2023-1月-12 15:39:18.577 INFO   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+2023-1月-12 15:39:19.407 INFO   main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat initialized with port(s): 8080 (http)
+2023-1月-12 15:39:19.423 INFO   main org.apache.coyote.http11.Http11NioProtocol Initializing ProtocolHandler ["http-nio-8080"]
+2023-1月-12 15:39:19.424 INFO   main org.apache.catalina.core.StandardService Starting service [Tomcat]
+2023-1月-12 15:39:19.424 INFO   main org.apache.catalina.core.StandardEngine Starting Servlet engine: [Apache Tomcat/9.0.36]
+2023-1月-12 15:39:19.565 INFO   main org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] Initializing Spring embedded WebApplicationContext
+2023-1月-12 15:39:19.565 INFO   main org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Root WebApplicationContext: initialization completed in 3710 ms
+2023-1月-12 15:39:20.032 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer loading dubbo config beans ...
+2023-1月-12 15:39:20.042 INFO   main org.apache.dubbo.config.spring.context.DubboConfigBeanInitializer dubbo config beans are loaded.
+2023-1月-12 15:39:20.431 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.476 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.503 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.523 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.541 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.565 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.584 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.608 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.632 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.676 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.702 WARN   main org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor Already exists another bean definition with the same bean name [accountBizService], rename dubbo reference bean to [accountBizService#3]. It is recommended to modify the name of one of the beans to avoid injection problems. prev: accountBizService[ReferenceBean:com.bjs.contract.proto.account.AccountBizService()], new: accountBizService#3[ReferenceBean:com.bjs.contract.proto.account.AccountBizService(filter=[SetTokenFilter])]. Please check private com.bjs.contract.proto.account.AccountBizService com.bjs.contract.action.UserAccountAction.accountBizService
+2023-1月-12 15:39:20.706 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.711 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:20.730 INFO   main org.apache.dubbo.config.spring.reference.ReferenceCreator The configBean[type:ReferenceConfig] has been built.
+2023-1月-12 15:39:21.177 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService
+2023-1月-12 15:39:22.120 INFO   main org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-1月-12 15:39:22.643 INFO   main org.redisson.Version Redisson 3.16.3
+2023-1月-12 15:39:23.183 INFO   main org.redisson.cluster.ClusterConnectionManager Redis cluster nodes configuration got from 127.0.0.1/127.0.0.1:7001:
+648df1dd42686c24b28efd0491d6bee669624083 127.0.0.1:7004 master - 0 1673509157773 38 connected 0-5460
+9416210965deb6f0ac458bd41c8b9fc78878ea99 127.0.0.1:7002 slave 96ee3b0c0207f443e1d41d55c8f7772a9744de80 0 1673509159963 40 connected
+a823cec1bd103fb5f2d5c8b6c14f93918152d14e 127.0.0.1:7006 master - 0 1673509161050 37 connected 10923-16383
+cc7756e86830f4d29cea7bf2f9f5f3d99dca68a3 127.0.0.1:7001 myself,slave 648df1dd42686c24b28efd0491d6bee669624083 0 0 1 connected
+4cccc5d99f781c4b44a7fe64da32e71e0f6fc813 127.0.0.1:7003 slave a823cec1bd103fb5f2d5c8b6c14f93918152d14e 0 1673509162140 37 connected
+96ee3b0c0207f443e1d41d55c8f7772a9744de80 127.0.0.1:7005 master - 0 1673509158880 40 connected 5461-10922
+
+2023-1月-12 15:39:23.294 INFO   redisson-netty-2-1 org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:7005
+2023-1月-12 15:39:23.294 INFO   redisson-netty-2-26 org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:7006
+2023-1月-12 15:39:23.295 INFO   redisson-netty-2-2 org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:7004
+2023-1月-12 15:39:23.321 INFO   redisson-netty-2-4 org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:7005
+2023-1月-12 15:39:23.321 INFO   redisson-netty-2-27 org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:7006
+2023-1月-12 15:39:23.330 INFO   redisson-netty-2-26 org.redisson.connection.pool.PubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:7002
+2023-1月-12 15:39:23.332 INFO   redisson-netty-2-3 org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:7004
+2023-1月-12 15:39:23.339 INFO   redisson-netty-2-19 org.redisson.connection.pool.PubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:7001
+2023-1月-12 15:39:23.343 INFO   redisson-netty-2-32 org.redisson.connection.pool.PubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:7003
+2023-1月-12 15:39:23.347 INFO   redisson-netty-2-25 org.redisson.cluster.ClusterConnectionManager slaves: [redis://127.0.0.1:7001] added for slot ranges: [[0-5460]]
+2023-1月-12 15:39:23.347 INFO   redisson-netty-2-25 org.redisson.cluster.ClusterConnectionManager master: redis://127.0.0.1:7004 added for slot ranges: [[0-5460]]
+2023-1月-12 15:39:23.347 INFO   redisson-netty-2-25 org.redisson.connection.pool.SlaveConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:7001
+2023-1月-12 15:39:23.347 INFO   redisson-netty-2-1 org.redisson.cluster.ClusterConnectionManager slaves: [redis://127.0.0.1:7003] added for slot ranges: [[10923-16383]]
+2023-1月-12 15:39:23.347 INFO   redisson-netty-2-1 org.redisson.cluster.ClusterConnectionManager master: redis://127.0.0.1:7006 added for slot ranges: [[10923-16383]]
+2023-1月-12 15:39:23.347 INFO   redisson-netty-2-1 org.redisson.connection.pool.SlaveConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:7003
+2023-1月-12 15:39:23.347 INFO   redisson-netty-2-26 org.redisson.cluster.ClusterConnectionManager slaves: [redis://127.0.0.1:7002] added for slot ranges: [[5461-10922]]
+2023-1月-12 15:39:23.347 INFO   redisson-netty-2-26 org.redisson.cluster.ClusterConnectionManager master: redis://127.0.0.1:7005 added for slot ranges: [[5461-10922]]
+2023-1月-12 15:39:23.347 INFO   redisson-netty-2-26 org.redisson.connection.pool.SlaveConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:7002
+2023-1月-12 15:39:23.940 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Initializing ExecutorService 'applicationTaskExecutor'
+2023-1月-12 15:39:24.634 INFO   main org.apache.coyote.http11.Http11NioProtocol Starting ProtocolHandler ["http-nio-8080"]
+2023-1月-12 15:39:24.659 INFO   main org.springframework.boot.web.embedded.tomcat.TomcatWebServer Tomcat started on port(s): 8080 (http) with context path ''
+2023-1月-12 15:39:25.061 INFO   main org.apache.coyote.http11.Http11NioProtocol Pausing ProtocolHandler ["http-nio-8080"]
+2023-1月-12 15:39:25.175 INFO   main org.apache.catalina.core.StandardService Stopping service [Tomcat]
+2023-1月-12 15:39:25.185 INFO   main org.apache.coyote.http11.Http11NioProtocol Stopping ProtocolHandler ["http-nio-8080"]
+2023-1月-12 15:39:25.188 INFO   main org.apache.coyote.http11.Http11NioProtocol Destroying ProtocolHandler ["http-nio-8080"]
+2023-1月-12 15:39:25.190 INFO   main org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-1月-12 15:39:25.191 ERROR  main org.springframework.boot.SpringApplication Application run failed
+java.lang.IllegalStateException: No such any registry to reference com.bjs.contract.proto.account.AccountBizService on the consumer 10.16.64.54 use dubbo version 3.0.9, please config <dubbo:registry address="..." /> to your spring config.
+	at org.apache.dubbo.config.ReferenceConfig.aggregateUrlFromRegistry(ReferenceConfig.java:481)
+	at org.apache.dubbo.config.ReferenceConfig.createProxy(ReferenceConfig.java:394)
+	at org.apache.dubbo.config.ReferenceConfig.init(ReferenceConfig.java:285)
+	at org.apache.dubbo.config.ReferenceConfig.get(ReferenceConfig.java:219)
+	at org.apache.dubbo.config.utils.SimpleReferenceCache.get(SimpleReferenceCache.java:129)
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.lambda$referServices$6(DefaultModuleDeployer.java:387)
+	at java.base/java.util.concurrent.ConcurrentHashMap$ValuesView.forEach(ConcurrentHashMap.java:4772)
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.referServices(DefaultModuleDeployer.java:367)
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.start(DefaultModuleDeployer.java:154)
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onContextRefreshedEvent(DubboDeployApplicationListener.java:111)
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:100)
+	at org.apache.dubbo.config.spring.context.DubboDeployApplicationListener.onApplicationEvent(DubboDeployApplicationListener.java:45)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.bjs.contract.CoAppApiApplication.main(CoAppApiApplication.java:18)
+2023-1月-12 15:39:27.273 WARN   main org.springframework.beans.factory.support.DisposableBeanAdapter Invocation of destroy method failed on bean with name 'tomcatMetricsBinder': java.lang.NullPointerException
+2023-1月-12 15:39:27.274 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService 'applicationTaskExecutor'
+2023-1月-12 15:39:27.343 INFO   main org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Shutting down ExecutorService
+2023-1月-12 15:39:27.344 INFO   main com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor class com.alibaba.nacos.spring.context.annotation.config.NacosValueAnnotationBeanPostProcessor was destroying!
+2023-1月-12 15:39:27.344 INFO   main com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor class com.alibaba.nacos.spring.beans.factory.annotation.AnnotationNacosInjectedBeanPostProcessor was destroying!
+2023-1月-12 15:39:28.279 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Start destroying Publisher
+2023-1月-12 15:39:28.279 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Start destroying common HttpClient
+2023-1月-12 15:39:28.279 WARN   Thread-9 com.alibaba.nacos.common.notify.NotifyCenter [NotifyCenter] Destruction of the end
+2023-1月-12 15:39:28.282 WARN   Thread-4 com.alibaba.nacos.common.http.HttpClientBeanHolder [HttpClientBeanHolder] Destruction of the end

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.coTriggerOrder";
+option java_outer_classname = "CoTriggerOrderPOProto";
+
+package coTriggerOrder;
+
+message CoTriggerOrderPO{
+        google.protobuf.Int64Value id = 1;
+        string symbol = 2;
+        google.protobuf.Int64Value uid = 3;
+        google.protobuf.Int32Value triggerType = 4;
+        string triggerPrice = 5;
+        string currentMarketPrice = 6;
+        google.protobuf.Int32Value positionType = 7;
+        string operateType = 8;
+        string operateSide = 9;
+        google.protobuf.Int32Value leverageLevel = 10;
+        string price = 11;
+        string volumeBase = 12;
+        string volumeQuote = 13;
+        google.protobuf.Int32Value status = 14;
+        google.protobuf.Int32Value memo = 15;
+        google.protobuf.Timestamp expireTime = 16;
+        google.protobuf.Timestamp ctime = 17;
+        google.protobuf.Timestamp mtime = 18;
+        google.protobuf.Int64Value masterId = 19;
+        google.protobuf.Int32Value type = 20;
+        google.protobuf.Int64Value positionId = 21;
+        google.protobuf.Int64Value orderId = 22;
+        google.protobuf.Int32Value tradeType = 23;
+        string tradePrice = 24;
+        google.protobuf.Timestamp triggerTime = 25;
+}

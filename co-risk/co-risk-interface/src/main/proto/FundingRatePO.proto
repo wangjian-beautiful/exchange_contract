@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.fundingRate";
+option java_outer_classname = "FundingRatePOProto";
+
+package fundingRate;
+
+message FundingRatePO{
+        google.protobuf.Int64Value id = 1;
+        string symbol = 2;
+        string rate = 3;
+        google.protobuf.Timestamp settleTime = 4;
+        google.protobuf.Timestamp mtime = 5;
+        google.protobuf.Timestamp ctime = 6;
+}

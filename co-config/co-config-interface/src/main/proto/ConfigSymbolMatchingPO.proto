@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.configSymbolMatching";
+option java_outer_classname = "ConfigSymbolMatchingPOProto";
+
+package configSymbolMatching;
+
+message ConfigSymbolMatchingPO{
+        google.protobuf.Int32Value id = 1;
+        string base = 2;
+        string quote = 3;
+        google.protobuf.Int32Value isOpen = 4;
+        string server = 5;
+        google.protobuf.Timestamp ctime = 6;
+        google.protobuf.Timestamp mtime = 7;
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.coTrade";
+option java_outer_classname = "CoTradePOProto";
+
+package coTrade;
+
+message CoTradePO{
+        google.protobuf.Int64Value id = 1;
+        string symbol = 2;
+        string tradeNo = 3;
+        google.protobuf.Int64Value uid = 4;
+        google.protobuf.Int64Value positionId = 5;
+        google.protobuf.Int64Value orderId = 6;
+        string operateType = 7;
+        string operateSide = 8;
+        string price = 9;
+        string volumeBase = 10;
+        string volumeQuote = 11;
+        string trendSide = 12;
+        string fee = 13;
+        google.protobuf.Timestamp ctime = 14;
+        google.protobuf.Timestamp mtime = 15;
+}

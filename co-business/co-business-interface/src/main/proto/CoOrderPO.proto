@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.coOrder";
+option java_outer_classname = "CoOrderPOProto";
+
+package coOrder;
+
+message CoOrderPO{
+        google.protobuf.Int64Value id = 1;
+        string symbol = 2;
+        google.protobuf.Int64Value triggerOrderId = 3;
+        google.protobuf.Int64Value uid = 4;
+        google.protobuf.Int32Value positionType = 5;
+        string operateType = 6;
+        string operateSide = 7;
+        google.protobuf.Int32Value type = 8;
+        google.protobuf.Int32Value leverageLevel = 9;
+        string price = 10;
+        string volumeBase = 11;
+        string volumeQuote = 12;
+        google.protobuf.Int32Value status = 13;
+        string ip = 14;
+        google.protobuf.Int32Value source = 15;
+        string dealBase = 16;
+        string avgPrice = 17;
+        string dealQuote = 18;
+        google.protobuf.Timestamp ctime = 19;
+        google.protobuf.Timestamp mtime = 20;
+        string openMakerFeeRate = 21;
+        string openTakerFeeRate = 22;
+        string closeMakerFeeRate = 23;
+        string closeTakerFeeRate = 24;
+        string minMakerFee = 25;
+        string minTakerFee = 26;
+        string lockPotentialFee = 27;
+        google.protobuf.Int32Value matchType = 28;
+        string takeProfitPriceTrigger = 29;
+        string stopLossPriceTrigger = 30;
+}

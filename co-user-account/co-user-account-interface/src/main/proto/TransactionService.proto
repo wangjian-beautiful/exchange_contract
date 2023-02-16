@@ -1,0 +1,76 @@
+syntax = "proto3";
+import "TransactionPO.proto";
+
+option java_multiple_files = true;
+option java_package = "com.bjs.contract.proto.transaction";
+option java_outer_classname = "TransactionBizServiceProto";
+
+package transaction;
+
+service TransactionBizService {
+    rpc getById (TransactionRequest) returns (TransactionPO) {}
+    rpc selectListByIds (TransactionIdsRequest) returns (TransactionListReply) {}
+    rpc selectAll (TransactionPageRequest) returns (TransactionListReply) {}
+    rpc selectList (TransactionPageRequest) returns (TransactionListReply) {}
+    rpc insertOne (TransactionRequest) returns (TransactionReply) {}
+    rpc insertBatch (TransactionListRequest) returns (TransactionListReply) {}
+    rpc updateById (TransactionRequest) returns (TransactionReply) {}
+    rpc updateBatch (TransactionListRequest) returns (TransactionReply) {}
+    rpc removeById (TransactionRequest) returns (TransactionReply) {}
+    rpc removeAll (TransactionIdsRequest) returns (TransactionReply) {}
+    rpc getUserTransactionList(UserTransactionRequest) returns(UserTransactionReply){}
+}
+
+message TransactionRequest {
+    int64 id = 1;
+    TransactionPO transactionPO = 2;
+}
+
+message TransactionPageRequest {
+    int32 page = 1;
+    int32 size = 2;
+    TransactionPO transactionPO = 3;
+}
+
+message TransactionListRequest {
+    repeated TransactionPO transactionPO = 1;
+}
+
+message TransactionIdsRequest {
+    repeated int64 id = 1;
+}
+
+message TransactionReply {
+    bool status = 1;
+    string message = 2;
+    TransactionPO transactionPO = 3;
+}
+
+message TransactionListReply {
+    repeated TransactionPO transactionPO = 1;
+    int64 total = 2;
+}
+
+
+message UserTransactionRequest{
+    string beginTime=1;
+    string endTime=2;
+    int32 page=3;
+    int32 limit=4;
+    string symbol=5;
+    string type=6;
+    int64 uid=7;
+}
+
+message UserTransactionReply{
+    repeated UserTransactionList transactionList=1;
+    int32 count=2;
+}
+
+message UserTransactionList{
+    string ctime=1;
+    string amount=2;
+    string symbol=3;
+    string type=4;
+    string contractName=5;
+}

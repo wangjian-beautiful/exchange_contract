@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('修改合约配置')" />
+    <th:block th:include="include :: datetimepicker-css" />
+</head>
+<body class="white-bg">
+<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+    <form class="form-horizontal m" id="form-config-edit" th:object="${coConfig}">
+        <input name="id" th:field="*{id}" type="hidden">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">合约币对：</label>
+            <div class="col-sm-8">
+                <input name="symbol" th:field="*{symbol}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">交易对base：</label>
+            <div class="col-sm-8">
+                <input name="base" th:field="*{base}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">交易对quote：</label>
+            <div class="col-sm-8">
+                <input name="quote" th:field="*{quote}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">合约名称：</label>
+            <div class="col-sm-8">
+                <input name="contractName" th:field="*{contractName}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">别名：</label>
+            <div class="col-sm-8">
+                <input name="contractOtherName" th:field="*{contractOtherName}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">资金费率最小值(不带百分比)：</label>
+            <div class="col-sm-8">
+                <input name="capitalIntervalMin" th:field="*{capitalIntervalMin}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">资金费率最大值(不带百分比)：</label>
+            <div class="col-sm-8">
+                <input name="capitalIntervalMax" th:field="*{capitalIntervalMax}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">开仓maker手续费率：</label>
+            <div class="col-sm-8">
+                <input name="openMakerFeeRate" th:field="*{openMakerFeeRate}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">开仓taker手续费率：</label>
+            <div class="col-sm-8">
+                <input name="openTakerFeeRate" th:field="*{openTakerFeeRate}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">平仓maker手续费率：</label>
+            <div class="col-sm-8">
+                <input name="closeMakerFeeRate" th:field="*{closeMakerFeeRate}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">平仓taker手续费率：</label>
+            <div class="col-sm-8">
+                <input name="closeTakerFeeRate" th:field="*{closeTakerFeeRate}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">最小maker手续费：</label>
+            <div class="col-sm-8">
+                <input name="minMakerFee" th:field="*{minMakerFee}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">最小taker手续费：</label>
+            <div class="col-sm-8">
+                <input name="minTakerFee" th:field="*{minTakerFee}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">保证金风险提示率 返还给前端的时候 是% 带百分号：</label>
+            <div class="col-sm-8">
+                <input name="riskAlarmWeak" th:field="*{riskAlarmWeak}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">中等级：</label>
+            <div class="col-sm-8">
+                <input name="riskAlarmMiddle" th:field="*{riskAlarmMiddle}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">强等级：</label>
+            <div class="col-sm-8">
+                <input name="riskAlarmStrong" th:field="*{riskAlarmStrong}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">开仓价格上下浮动率：</label>
+            <div class="col-sm-8">
+                <input name="priceLimitRate" th:field="*{priceLimitRate}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">列表显示状态：</label>
+            <div class="col-sm-8">
+                <input name="show" th:field="*{show}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">最小开仓数量：</label>
+            <div class="col-sm-8">
+                <input name="minOpenBase" th:field="*{minOpenBase}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">最大开仓数量：</label>
+            <div class="col-sm-8">
+                <input name="maxOpenBase" th:field="*{maxOpenBase}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">最小开仓数额：</label>
+            <div class="col-sm-8">
+                <input name="minOpenQuote" th:field="*{minOpenQuote}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">最大开仓数额：</label>
+            <div class="col-sm-8">
+                <input name="maxOpenQuote" th:field="*{maxOpenQuote}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">数量精度：</label>
+            <div class="col-sm-8">
+                <input name="basePrecision" th:field="*{basePrecision}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">数额精度：</label>
+            <div class="col-sm-8">
+                <input name="quotePrecision" th:field="*{quotePrecision}" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">价格精度：</label>
+            <div class="col-sm-8">
+                <input name="pricePrecision" th:field="*{pricePrecision}" class="form-control" type="text">
+            </div>
+        </div>
+    </form>
+</div>
+<th:block th:include="include :: footer" />
+<th:block th:include="include :: datetimepicker-js" />
+<script th:inline="javascript">
+    var prefix = ctx + "business/config";
+    $("#form-config-edit").validate({
+        focusCleanup: true
+    });
+
+    function submitHandler() {
+        if ($.validate.form()) {
+            $.operate.save(prefix + "/edit", $('#form-config-edit').serialize());
+        }
+    }
+</script>
+</body>
+</html>

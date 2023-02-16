@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('新增维持保证金率')" />
+</head>
+<body class="white-bg">
+<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+    <form class="form-horizontal m" id="form-rate-add">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">交易对：</label>
+            <div class="col-sm-8">
+                <input name="symbol" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">层级：</label>
+            <div class="col-sm-8">
+                <input name="tier" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">持仓 USDT名义价值 起始   左闭右开：</label>
+            <div class="col-sm-8">
+                <input name="notionalValueBegin" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">持仓 USDT名义价值 结束   左闭右开：</label>
+            <div class="col-sm-8">
+                <input name="notionalValueEnd" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">可使用最高杠杆倍数：</label>
+            <div class="col-sm-8">
+                <input name="maxLeverage" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">维持保证金比率 例子:0.0040：</label>
+            <div class="col-sm-8">
+                <input name="maintenanceMarginRate" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">维持保证金速算额：</label>
+            <div class="col-sm-8">
+                <input name="maintenanceAmount" class="form-control" type="text">
+            </div>
+        </div>
+    </form>
+</div>
+<th:block th:include="include :: footer" />
+<script th:inline="javascript">
+    var prefix = ctx + "business/maintenance"
+    $("#form-rate-add").validate({
+        focusCleanup: true
+    });
+
+    function submitHandler() {
+        if ($.validate.form()) {
+            $.operate.save(prefix + "/add", $('#form-rate-add').serialize());
+        }
+    }
+</script>
+</body>
+</html>

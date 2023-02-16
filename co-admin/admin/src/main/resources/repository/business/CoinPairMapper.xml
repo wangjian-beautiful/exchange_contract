@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bijinsuo.business.repository.CoinPairMapper">
+
+    <resultMap type="CoinPair" id="CoinPairResult">
+        <result property="id"    column="id"    />
+        <result property="base"    column="base"    />
+        <result property="quote"    column="quote"    />
+        <result property="isOpen"    column="is_open"   typeHandler="com.bijinsuo.business.util.mybatis.typehandler.CoinPairStatusHandler" />
+        <result property="server"    column="server"    />
+        <result property="ctime"    column="ctime"    />
+        <result property="mtime"    column="mtime"    />
+    </resultMap>
+
+    <sql id="selectCoinPairVo">
+        select id, base, quote, is_open, server, ctime, mtime from config_symbol_matching
+    </sql>
+
+    <select id="selectCoinPairList" parameterType="CoinPair" resultMap="CoinPairResult">
+        <include refid="selectCoinPairVo"/>
+        <where>
+            <if test="base != null  and base != ''"> and base = #{base}</if>
+            <if test="quote != null  and quote != ''"> and quote = #{quote}</if>
+            <if test="isOpen != null "> and is_open = #{isOpen, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.CoinPairStatusHandler}</if>
+            <if test="server != null  and server != ''"> and server = #{server}</if>
+        </where>
+    </select>
+
+    <select id="selectCoinPairById" parameterType="Long" resultMap="CoinPairResult">
+        <include refid="selectCoinPairVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertCoinPair" parameterType="CoinPair" useGeneratedKeys="true" keyProperty="id">
+        insert into config_symbol_matching
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="base != null">base,</if>
+            <if test="quote != null">quote,</if>
+            <if test="isOpen != null">is_open,</if>
+            <if test="server != null">server,</if>
+            <if test="ctime != null">ctime,</if>
+            <if test="mtime != null">mtime,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="base != null">#{base},</if>
+            <if test="quote != null">#{quote},</if>
+            <if test="isOpen != null">#{isOpen, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.CoinPairStatusHandler},</if>
+            <if test="server != null">#{server},</if>
+            <if test="ctime != null">#{ctime},</if>
+            <if test="mtime != null">#{mtime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateCoinPair" parameterType="CoinPair">
+        update config_symbol_matching
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="base != null">base = #{base},</if>
+            <if test="quote != null">quote = #{quote},</if>
+            <if test="isOpen != null">is_open = #{isOpen, typeHandler=com.bijinsuo.business.util.mybatis.typehandler.CoinPairStatusHandler},</if>
+            <if test="server != null">server = #{server},</if>
+            <if test="ctime != null">ctime = #{ctime},</if>
+            <if test="mtime != null">mtime = #{mtime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteCoinPairById" parameterType="Long">
+        delete from config_symbol_matching where id = #{id}
+    </delete>
+
+    <delete id="deleteCoinPairByIds" parameterType="String">
+        delete from config_symbol_matching where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

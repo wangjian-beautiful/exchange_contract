@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjs.contract.mapper.ContractConfigMapper">
+
+  <resultMap id="contractConfigMap" type="com.bjs.contract.entity.ContractConfig">
+    <id property="id" column="id"/>
+    <result property="symbol" column="symbol"/>
+    <result property="base" column="base"/>
+    <result property="quote" column="quote"/>
+    <result property="contractName" column="contract_name"/>
+    <result property="contractOtherName" column="contract_other_name"/>
+    <result property="capitalIntervalMin" column="capital_interval_min"/>
+    <result property="capitalIntervalMax" column="capital_interval_max"/>
+    <result property="openMakerFeeRate" column="open_maker_fee_rate"/>
+    <result property="openTakerFeeRate" column="open_taker_fee_rate"/>
+    <result property="closeMakerFeeRate" column="close_maker_fee_rate"/>
+    <result property="closeTakerFeeRate" column="close_taker_fee_rate"/>
+    <result property="minMakerFee" column="min_maker_fee"/>
+    <result property="minTakerFee" column="min_taker_fee"/>
+    <result property="riskAlarmWeak" column="risk_alarm_weak"/>
+    <result property="riskAlarmMiddle" column="risk_alarm_middle"/>
+    <result property="riskAlarmStrong" column="risk_alarm_strong"/>
+    <result property="priceLimitRate" column="price_limit_rate"/>
+    <result property="status" column="status"/>
+    <result property="show" column="show"/>
+    <result property="ctime" column="ctime"/>
+    <result property="mtime" column="mtime"/>
+    <result property="minOpenBase" column="min_open_base"/>
+    <result property="maxOpenBase" column="max_open_base"/>
+    <result property="minOpenQuote" column="min_open_quote"/>
+    <result property="maxOpenQuote" column="max_open_quote"/>
+    <result property="basePrecision" column="base_precision"/>
+    <result property="quotePrecision" column="quote_precision"/>
+    <result property="pricePrecision" column="price_precision"/>
+  </resultMap>
+</mapper>
